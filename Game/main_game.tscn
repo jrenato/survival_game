@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cetqfqbo47fqx"]
+
+[ext_resource type="PackedScene" uid="uid://cljsgebwjefua" path="res://Assets/meshes/terrain.tscn" id="1_wg56k"]
+[ext_resource type="PackedScene" uid="uid://b35nekd48bji0" path="res://Assets/meshes/tree.tscn" id="2_brvlc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdypb"]
+transparency = 1
+albedo_color = Color(0, 0.643137, 0.643137, 0.807843)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_83nje"]
+material = SubResource("StandardMaterial3D_bdypb")
+size = Vector2(2000, 2000)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_07cyo"]
+sky_top_color = Color(0.32549, 0.878431, 1, 1)
+sky_horizon_color = Color(0.670588, 0.784314, 0.831373, 1)
+ground_horizon_color = Color(0.670588, 0.784314, 0.831373, 1)
+
+[sub_resource type="Sky" id="Sky_7w2kp"]
+sky_material = SubResource("ProceduralSkyMaterial_07cyo")
+
+[sub_resource type="Environment" id="Environment_3wqh5"]
+background_mode = 2
+sky = SubResource("Sky_7w2kp")
+ambient_light_color = Color(0.32549, 0.878431, 1, 1)
+ambient_light_sky_contribution = 0.5
+
+[node name="MainGame" type="Node"]
+
+[node name="StageController" type="Node" parent="."]
+
+[node name="Island" type="Node" parent="StageController"]
+
+[node name="Terrain" parent="StageController/Island" instance=ExtResource("1_wg56k")]
+
+[node name="Tree" parent="StageController/Island" instance=ExtResource("2_brvlc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6)
+
+[node name="Water" type="MeshInstance3D" parent="StageController/Island"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.4, 0)
+mesh = SubResource("PlaneMesh_83nje")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="StageController/Island"]
+transform = Transform3D(1, 0, 0, 0, 0.894342, 0.447385, 0, -0.447385, 0.894342, 0, 2.09818, 0)
+light_color = Color(0.996078, 1, 0.729412, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="StageController/Island"]
+environment = SubResource("Environment_3wqh5")
