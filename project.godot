@@ -65,6 +65,12 @@ interact={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="ground"
+3d_physics/layer_2="actor"
+3d_physics/layer_3="interactable"
+
 [physics]
 
 3d/default_gravity=0.2
