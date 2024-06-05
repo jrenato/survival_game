@@ -4,11 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://dshrjpkk7oq1a" path="res://Assets/meshes/stone.tscn" id="2_ad4is"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bc7pp"]
-radius = 0.114854
+radius = 0.181632
 
 [node name="PickupableStone" instance=ExtResource("1_7vqbk")]
 
 [node name="Pickupable" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0755238, 0)
 item_key = 1
 prompt = "Pickup stone"
 
@@ -17,3 +18,4 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.
 shape = SubResource("SphereShape3D_bc7pp")
 
 [node name="Stone" parent="." index="1" instance=ExtResource("2_ad4is")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0755238, 0)

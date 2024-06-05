@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventSystem="*res://Game/event_system.gd"
+
 [debug]
 
 gdscript/warnings/unused_parameter=0

@@ -1,0 +1,5 @@
+extends Node
+
+
+signal looked_at_interactable
+signal stopped_looking_at_interactable
