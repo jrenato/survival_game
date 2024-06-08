@@ -9,3 +9,6 @@ signal pointed_at_interactable
 signal stopped_pointing_at_interactable
 signal tried_to_pick_item
 signal tried_to_interact
+
+signal enabled_player
+signal disabled_player

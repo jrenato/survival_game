@@ -7,7 +7,7 @@ enum CURSOR_TYPE {
 }
 
 var cursors: Dictionary = {
-	CURSOR_TYPE.NONE: preload("res://Assets/icons/cursor_none.png"),
+	CURSOR_TYPE.NONE: preload("res://Assets/icons/dot_small.png"),
 	CURSOR_TYPE.INTERACT: preload("res://Assets/icons/hand_point.png"),
 	CURSOR_TYPE.PICKUP: preload("res://Assets/icons/hand_open.png"),
 }
@@ -21,11 +21,13 @@ var current_cursor: CURSOR_TYPE:
 @onready var crosshair: TextureRect = %Crosshair
 
 
-func _ready() -> void:
+func _enter_tree() -> void:
 	EventSystem.pointed_at_interactable.connect(_on_pointed_at_interactable)
 	EventSystem.pointed_at_pickupable.connect(_on_pointed_at_pickupable)
 	EventSystem.stopped_pointing_at_interactable.connect(_on_stopped_pointing_at_interactable)
 
+
+func _ready() -> void:
 	current_cursor = CURSOR_TYPE.NONE
 
 

@@ -13,6 +13,11 @@ var is_sprinting: bool = false
 @onready var interaction_ray_cast: RayCast3D = %InteractionRayCast
 
 
+func _enter_tree() -> void:
+	EventSystem.enabled_player.connect(_on_set_player_enabled.bind(true))
+	EventSystem.disabled_player.connect(_on_set_player_enabled.bind(false))
+
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -54,10 +59,17 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	elif event.is_action_pressed("open_crafting_menu"):
-		EventSystem.opened_crafting_menu.emit()
+		EventSystem.enabled_bulletin.emit(BulletinConfig.Keys.CRAFTING_MENU)
 
 
 func look_around(relative: Vector2) -> void:
 	rotate_y(-relative.x * mouse_sensitivity)
 	head.rotate_x(-relative.y * mouse_sensitivity)
 	head.rotation_degrees.x = clampf(head.rotation_degrees.x, -90, 90)
+
+
+func _on_set_player_enabled(enabled: bool) -> void:
+	set_process(enabled)
+	set_physics_process(enabled)
+	set_process_input(enabled)
+	set_process_unhandled_input(enabled)
