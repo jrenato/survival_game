@@ -15,11 +15,17 @@ func check_interaction() -> void:
 
 		if not is_hitting:
 			is_hitting = true
-			EventSystem.looked_at_interactable.emit(
+			if interactable is Pickupable:
+				EventSystem.pointed_at_pickupable.emit()
+			else:
+				EventSystem.pointed_at_interactable.emit()
+
+			EventSystem.enabled_bulletin.emit(
 				BulletinConfig.Keys.INTERACTION_PROMPT,
 				interactable.prompt
 			)
 
 	elif is_hitting:
 		is_hitting = false
-		EventSystem.stopped_looking_at_interactable.emit(BulletinConfig.Keys.INTERACTION_PROMPT)
+		EventSystem.stopped_pointing_at_interactable.emit()
+		EventSystem.disabled_bulletin.emit(BulletinConfig.Keys.INTERACTION_PROMPT)

@@ -1,7 +1,11 @@
 extends Node
 
 
-signal looked_at_interactable
-signal stopped_looking_at_interactable
+signal enabled_bulletin
+signal disabled_bulletin
 
+signal pointed_at_pickupable
+signal pointed_at_interactable
+signal stopped_pointing_at_interactable
 signal tried_to_pick_item
+signal tried_to_interact

@@ -5,14 +5,14 @@ var bulletins: Dictionary = {}
 
 
 func _enter_tree() -> void:
-	EventSystem.looked_at_interactable.connect(_on_looked_at_interactable)
-	EventSystem.stopped_looking_at_interactable.connect(_on_stopped_looking_at_interactable)
+	EventSystem.enabled_bulletin.connect(_on_enabled_bulletin)
+	EventSystem.disabled_bulletin.connect(_on_disabled_bulletin)
 
 
 func create_bulletin(key: BulletinConfig.Keys, extra_args: Variant = null) -> void:
 	if bulletins.has(key):
 		return
-	var new_bulletin: Bulletin = BulletinConfig.get_bulletin(key)
+	var new_bulletin: Bulletin = BulletinConfig.get_bulletin(key).instantiate()
 	new_bulletin.initialize(extra_args)
 	add_child(new_bulletin)
 	bulletins[key] = new_bulletin
@@ -25,9 +25,9 @@ func destroy_bulletin(key: BulletinConfig.Keys) -> void:
 	bulletins.erase(key)
 
 
-func _on_looked_at_interactable(key: BulletinConfig.Keys, extra_args: Variant = null) -> void:
+func _on_enabled_bulletin(key: BulletinConfig.Keys, extra_args: Variant = null) -> void:
 	create_bulletin(key, extra_args)
 
 
-func _on_stopped_looking_at_interactable(key: BulletinConfig.Keys) -> void:
+func _on_disabled_bulletin(key: BulletinConfig.Keys) -> void:
 	destroy_bulletin(key)
