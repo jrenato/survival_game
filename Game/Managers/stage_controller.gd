@@ -1,7 +1,18 @@
 extends Node
 
+var can_drop_cursor_img = load("res://Assets/icons/hand_closed.png")
+var forbidden_cursor_img = load("res://Assets/icons/disabled.png")
 
 func _ready() -> void:
+	Input.set_custom_mouse_cursor(
+		CursorLibrary.get_cursor(CursorLibrary.CURSOR_TYPE.DROP),
+		Input.CURSOR_CAN_DROP
+	)
+	Input.set_custom_mouse_cursor(
+		CursorLibrary.get_cursor(CursorLibrary.CURSOR_TYPE.FORBIDDEN),
+		Input.CURSOR_FORBIDDEN
+	)
+
 	change_stage(StageConfig.Keys.ISLAND)
 
 
