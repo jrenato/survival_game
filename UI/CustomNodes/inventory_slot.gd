@@ -44,12 +44,3 @@ func _can_drop_data(at_position: Vector2, origin_slot: Variant) -> bool:
 
 func _drop_data(at_position: Vector2, origin_slot: Variant) -> void:
 	EventSystem.switched_two_items.emit(origin_slot.get_index(), get_index())
-
-
-func _on_mouse_entered() -> void:
-	if item_key != null:
-		Input.set_custom_mouse_cursor(CursorLibrary.get_cursor(CursorLibrary.CURSOR_TYPE.PICKUP))
-
-
-func _on_mouse_exited() -> void:
-	Input.set_custom_mouse_cursor(CursorLibrary.get_cursor(CursorLibrary.CURSOR_TYPE.ARROW_NONE))

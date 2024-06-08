@@ -8,3 +8,4 @@ script = ExtResource("2_41h8h")
 item_key = 2
 display_name = "Plant"
 icon = ExtResource("1_tqjai")
+description = "A green plant"
