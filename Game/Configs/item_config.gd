@@ -54,9 +54,18 @@ const CRAFTING_BLUEPRINT_RESOURCE_PATHS: Dictionary = {
 }
 
 
-static func get_item_resource(key: Keys) -> ItemResource:
-	return load(ITEM_RESOURCE_PATHS.get(key))
+const EQUIPABLE_ITEM_PATHS: Dictionary = {
+	Keys.AXE: "res://Items/Equipables/equipable_axe.tscn",
+}
 
 
-static func get_crafting_blueprint_resource(key: Keys) -> CraftingBlueprintResource:
-	return load(CRAFTING_BLUEPRINT_RESOURCE_PATHS.get(key))
+static func get_item_resource(item_key: Keys) -> ItemResource:
+	return load(ITEM_RESOURCE_PATHS.get(item_key))
+
+
+static func get_crafting_blueprint_resource(item_key: Keys) -> CraftingBlueprintResource:
+	return load(CRAFTING_BLUEPRINT_RESOURCE_PATHS.get(item_key))
+
+
+static func get_equipable_item(item_key: Keys) -> PackedScene:
+	return load(EQUIPABLE_ITEM_PATHS.get(item_key))

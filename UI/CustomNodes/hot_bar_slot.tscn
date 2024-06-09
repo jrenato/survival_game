@@ -10,6 +10,7 @@ texture = ExtResource("2_2je8u")
 script = ExtResource("3_teo1r")
 
 [node name="NumTextureRect" type="TextureRect" parent="." index="1"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = -12.0

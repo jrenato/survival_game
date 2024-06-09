@@ -60,6 +60,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	elif event.is_action_pressed("open_crafting_menu"):
 		EventSystem.enabled_bulletin.emit(BulletinConfig.Keys.CRAFTING_MENU)
+	elif event.is_action_pressed("item_hotkey"):
+		EventSystem.hotkey_pressed.emit(int(event.as_text()))
 
 
 func look_around(relative: Vector2) -> void:

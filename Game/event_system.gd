@@ -27,3 +27,9 @@ signal tried_to_interact
 ## Player
 signal enabled_player
 signal disabled_player
+
+# Equipment
+signal hotkey_pressed(hotkey: int)
+signal item_equipped(item_key: ItemConfig.Keys)
+signal item_unequipped
+signal updated_active_hotbar_slot(active_index: int)
