@@ -20,6 +20,12 @@ func _ready() -> void:
 			inventory_slot.mouse_entered.connect(_on_inventory_slot_mouse_entered.bind(inventory_slot))
 			inventory_slot.mouse_exited.connect(_on_inventory_slot_mouse_exited)
 
+	var hotbar_container: HBoxContainer = get_tree().get_first_node_in_group("hotbar_container")
+	if hotbar_container:
+		for hotbar_slot in hotbar_container.get_children():
+			hotbar_slot.mouse_entered.connect(_on_inventory_slot_mouse_entered.bind(hotbar_slot))
+			hotbar_slot.mouse_exited.connect(_on_inventory_slot_mouse_exited)
+
 
 func close() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

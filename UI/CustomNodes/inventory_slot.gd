@@ -39,8 +39,17 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 
 
 func _can_drop_data(at_position: Vector2, origin_slot: Variant) -> bool:
+	if item_key != null and origin_slot is HotBarSlot:
+		return ItemConfig.get_item_resource(item_key).is_equipable
+		
 	return origin_slot is InventorySlot
 
 
 func _drop_data(at_position: Vector2, origin_slot: Variant) -> void:
-	EventSystem.switched_two_items.emit(origin_slot.get_index(), get_index())
+	EventSystem.switched_two_items.emit(
+		origin_slot.get_index(),
+		origin_slot is HotBarSlot,
+		get_index(),
+		self is HotBarSlot
+	)
+

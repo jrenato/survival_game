@@ -13,10 +13,13 @@ signal stopped_pointing_at_interactable
 signal tried_to_pick_item
 signal inventory_update_requested
 signal inventory_updated(inventory: Array)
-signal switched_two_items(index_1: ItemConfig.Keys, index_2: ItemConfig.Keys)
+signal switched_two_items(index_1: int, from_hotbar: bool, index_2: int, to_hotbar: bool)
 signal crafted_item(item_key: ItemConfig.Keys)
 signal added_item(item_key: ItemConfig.Keys)
 signal removed_item(item_key: ItemConfig.Keys)
+
+# Hotbar
+signal hotbar_updated(hotbar: Array)
 
 ## Interaction
 signal tried_to_interact

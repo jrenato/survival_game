@@ -9,3 +9,4 @@ item_key = 10
 display_name = "Axe"
 icon = ExtResource("1_8nwob")
 description = "A handmade axe"
+is_equipable = true
