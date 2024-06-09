@@ -3,6 +3,7 @@ class_name PlayerMenuBase extends Bulletin
 
 @onready var inventory_container: GridContainer = %InventoryGridContainer
 @onready var item_description_label: Label = %ItemDescriptionLabel
+@onready var item_extra_info_label: Label = %ItemExtraInfoLabel
 
 
 func _enter_tree() -> void:
@@ -26,21 +27,22 @@ func close() -> void:
 	EventSystem.enabled_player.emit()
 
 
-func _on_inventory_updated(inventory: Array) -> void:
+func update_inventory(inventory: Array) -> void:
 	for i in inventory.size():
-		var inventory_slot: InventorySlot = inventory_container.get_child(i) as InventorySlot
-		if inventory_slot:
-			inventory_slot.set_item_key(inventory[i])
+		inventory_container.get_child(i).set_item_key(inventory[i])
+
+
+func _on_inventory_updated(inventory: Array) -> void:
+	update_inventory(inventory)
 
 
 func _on_inventory_slot_mouse_entered(inventory_slot: InventorySlot) -> void:
-	if inventory_slot.item_key == null:
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) or inventory_slot.item_key == null:
 		return
 
 	Input.set_custom_mouse_cursor(CursorLibrary.get_cursor(CursorLibrary.CURSOR_TYPE.PICKUP))
 	var item_resource: ItemResource = ItemConfig.get_item_resource(inventory_slot.item_key)
-	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		item_description_label.text = "%s\n%s" % [item_resource.display_name, item_resource.description]
+	item_description_label.text = "%s\n%s" % [item_resource.display_name, item_resource.description]
 
 
 func _on_inventory_slot_mouse_exited() -> void:

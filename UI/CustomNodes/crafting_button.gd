@@ -1,8 +1,9 @@
 class_name CraftingButton extends TextureRect
 
-@onready var icon_texture: TextureRect = %IconTextureRect
-
 var item_key: Variant
+
+@onready var icon_texture: TextureRect = %IconTextureRect
+@onready var button: Button = %Button
 
 
 func set_item_key(_item_key: Variant) -> void:

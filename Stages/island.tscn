@@ -65,5 +65,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14419, 2.38419e-07, 1.2204
 [node name="PickupableStick" parent="." instance=ExtResource("5_3oci4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07275, 0, 1.46826)
 
+[node name="PickupableStick2" parent="." instance=ExtResource("5_3oci4")]
+transform = Transform3D(0.657967, 0, -0.753047, 0, 1, 0, 0.753047, 0, 0.657967, -0.0346967, 0, 1.46826)
+
 [node name="PickupablePlant" parent="." instance=ExtResource("6_ijtm2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="PickupablePlant2" parent="." instance=ExtResource("6_ijtm2")]
+transform = Transform3D(0.303551, 0, 0.952815, 0, 1, 0, -0.952815, 0, 0.303551, -3.59263, 0, 0.233616)

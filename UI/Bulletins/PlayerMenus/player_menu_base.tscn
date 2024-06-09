@@ -202,6 +202,7 @@ size_flags_vertical = 1
 autowrap_mode = 2
 
 [node name="ItemExtraInfoLabel" type="Label" parent="MarginContainer/HBoxContainer/VSplitContainer/DescriptionNinePatchRect2/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(336, 0)
 layout_mode = 2
 size_flags_horizontal = 3
