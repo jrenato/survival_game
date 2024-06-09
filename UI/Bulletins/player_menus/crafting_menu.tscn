@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://2h8aftn7omqc"]
-
-[ext_resource type="PackedScene" uid="uid://bro8eh1sqle7q" path="res://UI/Bulletins/player_menus/player_menu_base.tscn" id="1_yedfj"]
-
-[node name="CraftingMenu" instance=ExtResource("1_yedfj")]
-
-[node name="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer/NinePatchRect" index="0"]
-text = "Crafting"

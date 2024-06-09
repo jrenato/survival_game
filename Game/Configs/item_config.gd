@@ -1,17 +1,62 @@
 class_name ItemConfig
 
 enum Keys {
+	# Pickupables
 	STICK,
 	STONE,
-	PLANT
+	PLANT,
+	MUSHROOM,
+	FRUIT,
+	LOG,
+	COAL,
+	FLINTSTONE,
+	RAWMEAT,
+	COOKEDMEAT,
+
+	# Craftables
+	AXE,
+	PICKAXE,
+	CAMPFIRE,
+	MULTITOOL,
+	ROPE,
+	TINDERBOX,
+	TORCH,
+	TENT,
+	RAFT,
 }
 
+
+const CRAFTABLE_ITEM_KEYS: Array[Keys] = [
+	Keys.AXE,
+	# Keys.PICKAXE,
+	# Keys.CAMPFIRE,
+	# Keys.MULTITOOL,
+	Keys.ROPE,
+	# Keys.TINDERBOX,
+	# Keys.TORCH,
+	# Keys.TENT,
+	# Keys.RAFT,
+]
+
+
 const ITEM_RESOURCE_PATHS: Dictionary = {
-	Keys.STICK: preload("res://Resources/ItemResources/stick_resource.tres"),
-	Keys.STONE: preload("res://Resources/ItemResources/stone_resource.tres"),
-	Keys.PLANT: preload("res://Resources/ItemResources/plant_resource.tres"),
+	Keys.STICK: "res://Resources/ItemResources/stick_item_resource.tres",
+	Keys.STONE: "res://Resources/ItemResources/stone_item_resource.tres",
+	Keys.PLANT: "res://Resources/ItemResources/plant_item_resource.tres",
+	Keys.AXE: "res://Resources/ItemResources/axe_item_resource.tres",
+	Keys.ROPE: "res://Resources/ItemResources/rope_item_resource.tres",
+}
+
+
+const CRAFTING_BLUEPRINT_RESOURCE_PATHS: Dictionary = {
+	Keys.AXE: "res://Resources/CraftingBlueprintResources/axe_blueprint.tres",
+	Keys.ROPE: "res://Resources/CraftingBlueprintResources/rope_blueprint.tres",
 }
 
 
 static func get_item_resource(key: Keys) -> ItemResource:
-	return ITEM_RESOURCE_PATHS.get(key)
+	return load(ITEM_RESOURCE_PATHS.get(key))
+
+
+static func get_crafting_blueprint_resource(key: Keys) -> CraftingBlueprintResource:
+	return load(CRAFTING_BLUEPRINT_RESOURCE_PATHS.get(key))

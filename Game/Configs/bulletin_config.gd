@@ -7,7 +7,7 @@ enum Keys {
 
 const BULLETIN_PATHS: Dictionary = {
 	Keys.INTERACTION_PROMPT: "res://UI/Bulletins/interaction_prompt.tscn",
-	Keys.CRAFTING_MENU: "res://UI/Bulletins/player_menus/crafting_menu.tscn",
+	Keys.CRAFTING_MENU: "res://UI/Bulletins/PlayerMenus/crafting_menu.tscn",
 }
 
 

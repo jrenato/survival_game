@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://d1usew6gn6hu"]
+
+[ext_resource type="Texture2D" uid="uid://56yoca2r0cag" path="res://Assets/textures/item_icons/axe.png" id="1_8nwob"]
+[ext_resource type="Script" path="res://Resources/ItemResources/item_resource.gd" id="2_olqu7"]
+
+[resource]
+script = ExtResource("2_olqu7")
+item_key = 10
+display_name = "Axe"
+icon = ExtResource("1_8nwob")
+description = "A handmade axe"

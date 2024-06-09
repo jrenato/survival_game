@@ -1,4 +1,4 @@
-extends Bulletin
+class_name PlayerMenuBase extends Bulletin
 
 
 @onready var inventory_container: GridContainer = %InventoryGridContainer
@@ -18,6 +18,7 @@ func _ready() -> void:
 		if inventory_slot is InventorySlot:
 			inventory_slot.mouse_entered.connect(_on_inventory_slot_mouse_entered.bind(inventory_slot))
 			inventory_slot.mouse_exited.connect(_on_inventory_slot_mouse_exited)
+
 
 func close() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
