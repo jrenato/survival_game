@@ -32,6 +32,7 @@ collide_with_areas = true
 script = ExtResource("2_qopfo")
 
 [node name="EquipableItemHolder" type="Node3D" parent="Head"]
+unique_name_in_owner = true
 script = ExtResource("3_71g2c")
 
 [node name="Managers" type="Node" parent="."]

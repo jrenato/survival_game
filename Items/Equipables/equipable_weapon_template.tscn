@@ -1,5 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bewrqffhmmsvp"]
+[gd_scene load_steps=3 format=3 uid="uid://bewrqffhmmsvp"]
 
-[ext_resource type="PackedScene" uid="uid://cwxjv45mn41k1" path="res://Items/Equipables/equipable_template.tscn" id="1_1neoh"]
+[ext_resource type="PackedScene" uid="uid://cwxjv45mn41k1" path="res://Items/Equipables/equipable_item_template.tscn" id="1_1neoh"]
+[ext_resource type="Script" path="res://Items/Equipables/equipable_weapon.gd" id="2_f32cn"]
 
 [node name="EquipableWeaponTemplate" instance=ExtResource("1_1neoh")]
+script = ExtResource("2_f32cn")
+
+[node name="HitCheckMarker" type="Marker3D" parent="." index="2"]
+unique_name_in_owner = true
