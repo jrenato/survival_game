@@ -45,6 +45,7 @@ const ITEM_RESOURCE_PATHS: Dictionary = {
 	Keys.PLANT: "res://Resources/ItemResources/plant_item_resource.tres",
 	Keys.AXE: "res://Resources/ItemResources/axe_item_resource.tres",
 	Keys.ROPE: "res://Resources/ItemResources/rope_item_resource.tres",
+	Keys.LOG: "res://Resources/ItemResources/log_item_resource.tres",
 }
 
 
@@ -59,6 +60,11 @@ const EQUIPABLE_ITEM_PATHS: Dictionary = {
 }
 
 
+const PICKUPABLE_ITEM_PATHS: Dictionary = {
+	Keys.LOG: "res://Items/Interactables/rigid_pickupable_log.tscn",
+}
+
+
 static func get_item_resource(item_key: Keys) -> ItemResource:
 	return load(ITEM_RESOURCE_PATHS.get(item_key))
 
@@ -69,3 +75,7 @@ static func get_crafting_blueprint_resource(item_key: Keys) -> CraftingBlueprint
 
 static func get_equipable_item(item_key: Keys) -> PackedScene:
 	return load(EQUIPABLE_ITEM_PATHS.get(item_key))
+
+
+static func get_pickupable_item(item_key: Keys) -> PackedScene:
+	return load(PICKUPABLE_ITEM_PATHS.get(item_key))

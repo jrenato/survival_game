@@ -33,3 +33,6 @@ signal hotkey_pressed(hotkey: int)
 signal item_equipped(item_key: ItemConfig.Keys)
 signal item_unequipped
 signal updated_active_hotbar_slot(active_index: int)
+
+# Spawning
+signal object_spawned(object_scene: PackedScene, transform: Transform3D)
