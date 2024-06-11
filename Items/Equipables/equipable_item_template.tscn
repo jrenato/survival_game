@@ -9,3 +9,4 @@ script = ExtResource("1_d08nd")
 unique_name_in_owner = true
 
 [node name="MeshHolder" type="Node3D" parent="."]
+unique_name_in_owner = true
