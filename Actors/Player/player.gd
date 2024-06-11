@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export var jump_velocity: float = 4.0
 @export var gravity: float = 0.2
 @export var mouse_sensitivity: float = 0.005
+@export var walking_energy_change_per_minute: float = -0.05
 
 var is_sprinting: bool = false
 
@@ -29,9 +30,24 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	move()
+	check_walking_energy_change(delta)
 
-	if Input.is_action_just_pressed("use_item"):
+	if Input.is_action_pressed("use_item"):
 		equipable_item_holder.try_to_use_item()
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		look_around(event.relative)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	elif event.is_action_pressed("open_crafting_menu"):
+		EventSystem.enabled_bulletin.emit(BulletinConfig.Keys.CRAFTING_MENU)
+	elif event.is_action_pressed("item_hotkey"):
+		EventSystem.hotkey_pressed.emit(int(event.as_text()))
 
 
 func move() -> void:
@@ -54,18 +70,11 @@ func move() -> void:
 	move_and_slide()
 
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		look_around(event.relative)
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	elif event.is_action_pressed("open_crafting_menu"):
-		EventSystem.enabled_bulletin.emit(BulletinConfig.Keys.CRAFTING_MENU)
-	elif event.is_action_pressed("item_hotkey"):
-		EventSystem.hotkey_pressed.emit(int(event.as_text()))
+func check_walking_energy_change(delta: float) -> void:
+	if velocity.x or velocity.z:
+		EventSystem.changed_energy.emit(
+			delta * walking_energy_change_per_minute * Vector2(velocity.x, velocity.z).length()
+		)
 
 
 func look_around(relative: Vector2) -> void:

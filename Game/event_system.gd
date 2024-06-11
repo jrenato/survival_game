@@ -27,6 +27,8 @@ signal tried_to_interact
 ## Player
 signal enabled_player
 signal disabled_player
+signal changed_energy(energy_change: float)
+signal updated_energy(max_energy: float, current_energy: float)
 
 # Equipment
 signal hotkey_pressed(hotkey: int)
