@@ -14,7 +14,6 @@ var is_sprinting: bool = false
 @onready var equipable_item_holder: ItemHolder = %EquipableItemHolder
 
 
-
 func _enter_tree() -> void:
 	EventSystem.enabled_player.connect(_on_set_player_enabled.bind(true))
 	EventSystem.disabled_player.connect(_on_set_player_enabled.bind(false))

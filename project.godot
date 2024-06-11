@@ -107,3 +107,10 @@ use_item={
 [physics]
 
 3d/default_gravity=0.2
+
+[shader_globals]
+
+viewmodel_fov={
+"type": "float",
+"value": 70.0
+}
