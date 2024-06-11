@@ -112,5 +112,5 @@ use_item={
 
 viewmodel_fov={
 "type": "float",
-"value": 70.0
+"value": 77.0
 }

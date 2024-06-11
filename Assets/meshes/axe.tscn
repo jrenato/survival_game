@@ -1,48 +1,54 @@
 [gd_scene load_steps=7 format=3 uid="uid://bdeeoa1bhiig4"]
 
-[ext_resource type="Shader" path="res://Assets/shaders/viewmodel.gdshader" id="1_cnf30"]
+[ext_resource type="Shader" path="res://Assets/shaders/firstpersonmodel.gdshader" id="1_bqmm1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0abo"]
 resource_name = "Stick"
 render_priority = 0
-shader = ExtResource("1_cnf30")
+shader = ExtResource("1_bqmm1")
 shader_parameter/albedo = Color(0.30666, 0.210968, 0.1255, 1)
-shader_parameter/specular = 0.5
-shader_parameter/metallic = 0.0
+shader_parameter/point_size = 1.0
 shader_parameter/roughness = 1.0
 shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
-shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
-shader_parameter/normal_scale = 0.5
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/fov = 77.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_noh6w"]
 resource_name = "Stone"
 render_priority = 0
-shader = ExtResource("1_cnf30")
+shader = ExtResource("1_bqmm1")
 shader_parameter/albedo = Color(0.364706, 0.364706, 0.447059, 1)
-shader_parameter/specular = 0.5
-shader_parameter/metallic = 0.0
+shader_parameter/point_size = 1.0
 shader_parameter/roughness = 0.8
 shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
-shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
-shader_parameter/normal_scale = 0.5
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/fov = 77.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ml4q"]
 resource_name = "Rope"
 render_priority = 0
-shader = ExtResource("1_cnf30")
+shader = ExtResource("1_bqmm1")
 shader_parameter/albedo = Color(0.379992, 0.357019, 0.247, 1)
-shader_parameter/specular = 0.5
-shader_parameter/metallic = 0.0
+shader_parameter/point_size = 1.0
 shader_parameter/roughness = 1.0
 shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
-shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
-shader_parameter/normal_scale = 0.5
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/fov = 77.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1v534"]
 _surfaces = [{
