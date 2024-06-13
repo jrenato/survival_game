@@ -29,6 +29,8 @@ signal enabled_player
 signal disabled_player
 signal changed_energy(energy_change: float)
 signal updated_energy(max_energy: float, current_energy: float)
+signal changed_health(health_change: float)
+signal updated_health(max_health: float, current_health: float)
 
 # Equipment
 signal hotkey_pressed(hotkey: int)
