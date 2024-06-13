@@ -46,6 +46,7 @@ const ITEM_RESOURCE_PATHS: Dictionary = {
 	Keys.AXE: "res://Resources/ItemResources/axe_item_resource.tres",
 	Keys.ROPE: "res://Resources/ItemResources/rope_item_resource.tres",
 	Keys.LOG: "res://Resources/ItemResources/log_item_resource.tres",
+	Keys.MUSHROOM: "res://Resources/ItemResources/mushroom_item_resource.tres"
 }
 
 
@@ -57,6 +58,7 @@ const CRAFTING_BLUEPRINT_RESOURCE_PATHS: Dictionary = {
 
 const EQUIPABLE_ITEM_PATHS: Dictionary = {
 	Keys.AXE: "res://Items/Equipables/equipable_axe.tscn",
+	Keys.MUSHROOM: "res://Items/Consumables/equipable_mushroom.tscn",
 }
 
 

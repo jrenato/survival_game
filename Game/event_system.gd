@@ -17,6 +17,7 @@ signal switched_two_items(index_1: int, from_hotbar: bool, index_2: int, to_hotb
 signal crafted_item(item_key: ItemConfig.Keys)
 signal added_item(item_key: ItemConfig.Keys)
 signal removed_item(item_key: ItemConfig.Keys)
+signal deleted_item_by_index(index: int, is_in_hotbar: bool)
 
 # Hotbar
 signal hotbar_updated(hotbar: Array)
@@ -37,6 +38,7 @@ signal hotkey_pressed(hotkey: int)
 signal item_equipped(item_key: ItemConfig.Keys)
 signal item_unequipped
 signal updated_active_hotbar_slot(active_index: int)
+signal deleted_equipped_item
 
 # Spawning
 signal object_spawned(object_scene: PackedScene, transform: Transform3D)
