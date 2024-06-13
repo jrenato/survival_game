@@ -35,7 +35,8 @@ func die() -> void:
 	for child in get_children():
 		child.queue_free()
 
-	add_child(residue_static_body)
+	if residue_static_body:
+		add_child(residue_static_body)
 
 
 func _on_register_hit(weapon_item_resource: WeaponItemResource) -> void:

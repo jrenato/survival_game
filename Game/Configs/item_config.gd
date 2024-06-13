@@ -28,7 +28,7 @@ enum Keys {
 
 const CRAFTABLE_ITEM_KEYS: Array[Keys] = [
 	Keys.AXE,
-	# Keys.PICKAXE,
+	Keys.PICKAXE,
 	# Keys.CAMPFIRE,
 	# Keys.MULTITOOL,
 	Keys.ROPE,
@@ -44,26 +44,31 @@ const ITEM_RESOURCE_PATHS: Dictionary = {
 	Keys.STONE: "res://Resources/ItemResources/stone_item_resource.tres",
 	Keys.PLANT: "res://Resources/ItemResources/plant_item_resource.tres",
 	Keys.AXE: "res://Resources/ItemResources/axe_item_resource.tres",
+	Keys.PICKAXE: "res://Resources/ItemResources/pickaxe_item_resource.tres",
 	Keys.ROPE: "res://Resources/ItemResources/rope_item_resource.tres",
+	Keys.MUSHROOM: "res://Resources/ItemResources/mushroom_item_resource.tres",
 	Keys.LOG: "res://Resources/ItemResources/log_item_resource.tres",
-	Keys.MUSHROOM: "res://Resources/ItemResources/mushroom_item_resource.tres"
+	Keys.COAL: "res://Resources/ItemResources/coal_item_resource.tres",
 }
 
 
 const CRAFTING_BLUEPRINT_RESOURCE_PATHS: Dictionary = {
 	Keys.AXE: "res://Resources/CraftingBlueprintResources/axe_blueprint.tres",
+	Keys.PICKAXE: "res://Resources/CraftingBlueprintResources/pickaxe_blueprint.tres",
 	Keys.ROPE: "res://Resources/CraftingBlueprintResources/rope_blueprint.tres",
 }
 
 
 const EQUIPABLE_ITEM_PATHS: Dictionary = {
 	Keys.AXE: "res://Items/Equipables/equipable_axe.tscn",
+	Keys.PICKAXE: "res://Items/Equipables/equipable_pickaxe.tscn",
 	Keys.MUSHROOM: "res://Items/Consumables/equipable_mushroom.tscn",
 }
 
 
 const PICKUPABLE_ITEM_PATHS: Dictionary = {
 	Keys.LOG: "res://Items/Interactables/rigid_pickupable_log.tscn",
+	Keys.COAL: "res://Items/Interactables/rigid_pickupable_coal.tscn",
 }
 
 
