@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bhqo4j0k1rc2y"]
 
-[ext_resource type="PackedScene" uid="uid://ca1k1w8620guo" path="res://Items/Consumables/equipable_consumable_template.tscn" id="1_f0iqe"]
+[ext_resource type="PackedScene" uid="uid://ca1k1w8620guo" path="res://Items/Templates/equipable_consumable_template.tscn" id="1_f0iqe"]
 [ext_resource type="PackedScene" uid="uid://comn83gclpws4" path="res://Assets/meshes/mushroom.tscn" id="2_38m4l"]
 
 [sub_resource type="Animation" id="Animation_2sp2c"]

@@ -20,6 +20,7 @@ func _ready() -> void:
 	hotbar.resize(HOTBAR_SIZE)
 
 	inventory[0] = ItemConfig.Keys.AXE
+	inventory[1] = ItemConfig.Keys.TENT
 
 
 func add_item(item_key: ItemConfig.Keys) -> void:

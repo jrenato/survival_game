@@ -19,12 +19,14 @@ func try_to_use_item() -> void:
 func equip_item(item_key: ItemConfig.Keys) -> void:
 	unequip_item()
 
-	var item_scene: Node3D = ItemConfig.get_equipable_item(item_key).instantiate()
+	var item_scene: Node3D = ItemConfig.get_equipable_scene(item_key).instantiate()
 
 	if item_scene is EquipableWeapon:
 		item_scene.weapon_item_resource = ItemConfig.get_item_resource(item_key)
 	elif item_scene is EquipableConsumable:
 		item_scene.consumable_item_resource = ItemConfig.get_item_resource(item_key)
+	elif item_scene is EquipableConstructable:
+		item_scene.constructible_item_key = item_key
 
 	add_child(item_scene)
 	current_item_scene = item_scene

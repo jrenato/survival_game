@@ -213,7 +213,7 @@ func set_state(new_state: STATE) -> void:
 
 			animation_player.play("Death", ANIM_BLEND)
 
-			var meat_scene: PackedScene = ItemConfig.get_pickupable_item(ItemConfig.Keys.RAWMEAT)
+			var meat_scene: PackedScene = ItemConfig.get_pickupable_scene(ItemConfig.Keys.RAWMEAT)
 			EventSystem.object_spawned.emit(meat_scene, meat_spawn_marker.global_transform)
 
 			disappear_after_death_timer.start(10)

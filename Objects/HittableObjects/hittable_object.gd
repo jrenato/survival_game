@@ -25,7 +25,7 @@ func take_damage(damage: float) -> void:
 
 
 func die() -> void:
-	var scene_to_spawn: PackedScene = ItemConfig.get_pickupable_item(attributes.drop_item_key)
+	var scene_to_spawn: PackedScene = ItemConfig.get_pickupable_scene(attributes.drop_item_key)
 	for marker in item_spawn_points.get_children():
 		EventSystem.object_spawned.emit(scene_to_spawn, marker.global_transform)
 

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://byr4cmpswpi74"]
+
+[ext_resource type="PackedScene" uid="uid://cwxjv45mn41k1" path="res://Items/Templates/equipable_template.tscn" id="1_q10t4"]
+[ext_resource type="Script" path="res://Items/equipable_constructible.gd" id="2_mq4ui"]
+
+[node name="EquipableConstructible" instance=ExtResource("1_q10t4")]
+script = ExtResource("2_mq4ui")
+
+[node name="ItemPlaceRayCast" type="RayCast3D" parent="." index="2"]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -3)
+
+[node name="ConstructibleArea" type="Area3D" parent="." index="3"]
+unique_name_in_owner = true
+top_level = true
+collision_layer = 0
+collision_mask = 126
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ConstructibleArea" index="0"]
+unique_name_in_owner = true
+
+[node name="ConstructiblePreviewMesh" type="MeshInstance3D" parent="ConstructibleArea" index="1"]
+unique_name_in_owner = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://byu4sfdmclxo0"]
 
-[ext_resource type="PackedScene" uid="uid://b2yrleqwt8ikp" path="res://Items/Interactables/rigid_pickupable_template.tscn" id="1_n3n3c"]
+[ext_resource type="PackedScene" uid="uid://b2yrleqwt8ikp" path="res://Items/Templates/rigid_pickupable_template.tscn" id="1_n3n3c"]
 [ext_resource type="PackedScene" uid="uid://cmd36bhterxgu" path="res://Assets/meshes/raw_meat.tscn" id="2_mcnce"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n1rwo"]

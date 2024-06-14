@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bdeeoa1bhiig4"]
 
-[ext_resource type="Shader" path="res://Assets/shaders/weapon.gdshader" id="1_bqmm1"]
+[ext_resource type="Shader" path="res://Resources/Shaders/weapon.gdshader" id="1_bqmm1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0abo"]
 resource_name = "Stick"

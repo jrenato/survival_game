@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://cljsgebwjefua" path="res://Assets/meshes/terrain.tscn" id="1_s3w3k"]
 [ext_resource type="PackedScene" uid="uid://c3ohes7ep45ai" path="res://Actors/Player/player.tscn" id="3_2oqmf"]
-[ext_resource type="PackedScene" uid="uid://cuymms7rhn48s" path="res://Items/Interactables/pickupable_stone.tscn" id="4_l3fab"]
-[ext_resource type="PackedScene" uid="uid://dalrob44egsnw" path="res://Items/Interactables/pickupable_stick.tscn" id="5_3oci4"]
-[ext_resource type="PackedScene" uid="uid://b863no8fu2efe" path="res://Items/Interactables/pickupable_plant.tscn" id="6_ijtm2"]
+[ext_resource type="PackedScene" uid="uid://cuymms7rhn48s" path="res://Items/Pickupables/pickupable_stone.tscn" id="6_lsgw4"]
 [ext_resource type="PackedScene" uid="uid://c4xe83g75fjq4" path="res://Objects/HittableObjects/hittable_tree.tscn" id="7_go7cx"]
 [ext_resource type="PackedScene" uid="uid://cq7uue3mmfgf1" path="res://Game/Managers/spawner.tscn" id="7_jrqnq"]
-[ext_resource type="PackedScene" uid="uid://dp0y4tus81fih" path="res://Items/Interactables/pickupable_mushroom.tscn" id="8_q0y7b"]
+[ext_resource type="PackedScene" uid="uid://dalrob44egsnw" path="res://Items/Pickupables/pickupable_stick.tscn" id="7_lhxmc"]
+[ext_resource type="PackedScene" uid="uid://b863no8fu2efe" path="res://Items/Pickupables/pickupable_plant.tscn" id="8_tbq5b"]
+[ext_resource type="PackedScene" uid="uid://dp0y4tus81fih" path="res://Items/Pickupables/pickupable_mushroom.tscn" id="9_f5jl4"]
 [ext_resource type="PackedScene" uid="uid://cnmq1u62c2ik0" path="res://Objects/HittableObjects/hittable_coal_boulder.tscn" id="9_jtyby"]
 [ext_resource type="PackedScene" uid="uid://bxulaaikg08nq" path="res://Actors/Animals/cow.tscn" id="10_bvngs"]
 [ext_resource type="PackedScene" uid="uid://qreot7sn11og" path="res://Actors/Animals/wolf.tscn" id="11_go1vw"]
@@ -92,28 +92,28 @@ mesh = SubResource("PlaneMesh_83nje")
 
 [node name="Pickupables" type="Node3D" parent="."]
 
-[node name="PickupableStone" parent="Pickupables" instance=ExtResource("4_l3fab")]
+[node name="PickupableStone" parent="Pickupables" instance=ExtResource("6_lsgw4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14419, 2.38419e-07, 1.22044)
 
-[node name="PickupableStick" parent="Pickupables" instance=ExtResource("5_3oci4")]
+[node name="PickupableStick" parent="Pickupables" instance=ExtResource("7_lhxmc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07275, 0, 1.46826)
 
-[node name="PickupableStick2" parent="Pickupables" instance=ExtResource("5_3oci4")]
+[node name="PickupableStick2" parent="Pickupables" instance=ExtResource("7_lhxmc")]
 transform = Transform3D(0.657967, 0, -0.753047, 0, 1, 0, 0.753047, 0, 0.657967, -0.0346967, 0, 1.46826)
 
-[node name="PickupablePlant" parent="Pickupables" instance=ExtResource("6_ijtm2")]
+[node name="PickupablePlant" parent="Pickupables" instance=ExtResource("8_tbq5b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
 
-[node name="PickupablePlant2" parent="Pickupables" instance=ExtResource("6_ijtm2")]
+[node name="PickupablePlant2" parent="Pickupables" instance=ExtResource("8_tbq5b")]
 transform = Transform3D(0.303551, 0, 0.952815, 0, 1, 0, -0.952815, 0, 0.303551, -3.59263, 0, 0.233616)
 
-[node name="PickupableMushroom" parent="Pickupables" instance=ExtResource("8_q0y7b")]
+[node name="PickupableMushroom" parent="Pickupables" instance=ExtResource("9_f5jl4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32954, 0, -2.31655)
 
-[node name="PickupableMushroom2" parent="Pickupables" instance=ExtResource("8_q0y7b")]
+[node name="PickupableMushroom2" parent="Pickupables" instance=ExtResource("9_f5jl4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650718, 0, -2.82508)
 
-[node name="PickupableMushroom3" parent="Pickupables" instance=ExtResource("8_q0y7b")]
+[node name="PickupableMushroom3" parent="Pickupables" instance=ExtResource("9_f5jl4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19865, 0, -1.4099)
 
 [node name="Cow" parent="." instance=ExtResource("10_bvngs")]

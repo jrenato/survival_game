@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cvu8420w6515f"]
 
-[ext_resource type="PackedScene" uid="uid://bewrqffhmmsvp" path="res://Items/Equipables/equipable_weapon_template.tscn" id="1_gp7le"]
+[ext_resource type="PackedScene" uid="uid://bewrqffhmmsvp" path="res://Items/Templates/equipable_weapon_template.tscn" id="1_gp7le"]
 [ext_resource type="PackedScene" uid="uid://b3bcglaygqvga" path="res://Assets/meshes/pickaxe.tscn" id="3_jxssa"]
 
 [sub_resource type="Animation" id="Animation_etdli"]

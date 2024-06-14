@@ -50,6 +50,7 @@ const ITEM_RESOURCE_PATHS: Dictionary = {
 	Keys.LOG: "res://Resources/ItemResources/log_item_resource.tres",
 	Keys.COAL: "res://Resources/ItemResources/coal_item_resource.tres",
 	Keys.RAWMEAT: "res://Resources/ItemResources/raw_meat_item_resource.tres",
+	Keys.TENT: "res://Resources/ItemResources/tent_item_resource.tres",
 }
 
 
@@ -60,17 +61,26 @@ const CRAFTING_BLUEPRINT_RESOURCE_PATHS: Dictionary = {
 }
 
 
-const EQUIPABLE_ITEM_PATHS: Dictionary = {
-	Keys.AXE: "res://Items/Equipables/equipable_axe.tscn",
-	Keys.PICKAXE: "res://Items/Equipables/equipable_pickaxe.tscn",
+const EQUIPABLE_ITEM_SCENES: Dictionary = {
+	# Constructibles
+	Keys.TENT: "res://Items/Constructibles/equipable_tent.tscn",
+	# Consumables
 	Keys.MUSHROOM: "res://Items/Consumables/equipable_mushroom.tscn",
+	# Weapons
+	Keys.AXE: "res://Items/Weapons/equipable_axe.tscn",
+	Keys.PICKAXE: "res://Items/Weapons/equipable_pickaxe.tscn",
 }
 
 
-const PICKUPABLE_ITEM_PATHS: Dictionary = {
-	Keys.LOG: "res://Items/Interactables/rigid_pickupable_log.tscn",
-	Keys.COAL: "res://Items/Interactables/rigid_pickupable_coal.tscn",
-	Keys.RAWMEAT: "res://Items/Interactables/rigid_pickupable_raw_meat.tscn",
+const PICKUPABLE_ITEM_SCENES: Dictionary = {
+	Keys.LOG: "res://Items/Pickupables/rigid_pickupable_log.tscn",
+	Keys.COAL: "res://Items/Pickupables/rigid_pickupable_coal.tscn",
+	Keys.RAWMEAT: "res://Items/Pickupables/rigid_pickupable_raw_meat.tscn",
+}
+
+
+const CONSTRUCTIBLE_SCENES: Dictionary = {
+	Keys.TENT: "res://Objects/Constructibles/constructible_tent.tscn",
 }
 
 
@@ -82,9 +92,13 @@ static func get_crafting_blueprint_resource(item_key: Keys) -> CraftingBlueprint
 	return load(CRAFTING_BLUEPRINT_RESOURCE_PATHS.get(item_key))
 
 
-static func get_equipable_item(item_key: Keys) -> PackedScene:
-	return load(EQUIPABLE_ITEM_PATHS.get(item_key))
+static func get_equipable_scene(item_key: Keys) -> PackedScene:
+	return load(EQUIPABLE_ITEM_SCENES.get(item_key))
 
 
-static func get_pickupable_item(item_key: Keys) -> PackedScene:
-	return load(PICKUPABLE_ITEM_PATHS.get(item_key))
+static func get_pickupable_scene(item_key: Keys) -> PackedScene:
+	return load(PICKUPABLE_ITEM_SCENES.get(item_key))
+
+
+static func get_constructible_scene(item_key: Keys) -> PackedScene:
+	return load(CONSTRUCTIBLE_SCENES.get(item_key))
