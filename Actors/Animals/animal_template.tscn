@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2tk2q3xfsyyo"]
+[gd_scene load_steps=4 format=3 uid="uid://d2tk2q3xfsyyo"]
 
 [ext_resource type="PackedScene" uid="uid://codtkbxhmimbk" path="res://Objects/HitBoxes/hitbox.tscn" id="1_bfhbi"]
 [ext_resource type="Script" path="res://Actors/Animals/animal.gd" id="1_wlr7u"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pmige"]
 
 [node name="Animal" type="CharacterBody3D"]
 collision_layer = 2
@@ -36,3 +38,25 @@ one_shot = true
 [node name="MeatSpawnMarker" type="Marker3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.609296, 0)
+
+[node name="EyesMarker" type="Marker3D" parent="."]
+unique_name_in_owner = true
+
+[node name="AttackHitArea" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+unique_name_in_owner = true
+
+[node name="VisionArea" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="VisionCollisionShape" type="CollisionShape3D" parent="VisionArea"]
+unique_name_in_owner = true
+shape = SubResource("SphereShape3D_pmige")
