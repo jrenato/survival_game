@@ -49,6 +49,7 @@ const ITEM_RESOURCE_PATHS: Dictionary = {
 	Keys.MUSHROOM: "res://Resources/ItemResources/mushroom_item_resource.tres",
 	Keys.LOG: "res://Resources/ItemResources/log_item_resource.tres",
 	Keys.COAL: "res://Resources/ItemResources/coal_item_resource.tres",
+	Keys.RAWMEAT: "res://Resources/ItemResources/raw_meat_item_resource.tres",
 }
 
 
@@ -69,6 +70,7 @@ const EQUIPABLE_ITEM_PATHS: Dictionary = {
 const PICKUPABLE_ITEM_PATHS: Dictionary = {
 	Keys.LOG: "res://Items/Interactables/rigid_pickupable_log.tscn",
 	Keys.COAL: "res://Items/Interactables/rigid_pickupable_coal.tscn",
+	Keys.RAWMEAT: "res://Items/Interactables/rigid_pickupable_raw_meat.tscn",
 }
 
 
