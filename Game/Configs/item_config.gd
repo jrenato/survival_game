@@ -51,6 +51,7 @@ const ITEM_RESOURCE_PATHS: Dictionary = {
 	Keys.COAL: "res://Resources/ItemResources/coal_item_resource.tres",
 	Keys.RAWMEAT: "res://Resources/ItemResources/raw_meat_item_resource.tres",
 	Keys.TENT: "res://Resources/ItemResources/tent_item_resource.tres",
+	Keys.CAMPFIRE: "res://Resources/ItemResources/campfire_item_resource.tres",
 }
 
 
@@ -64,6 +65,7 @@ const CRAFTING_BLUEPRINT_RESOURCE_PATHS: Dictionary = {
 const EQUIPABLE_ITEM_SCENES: Dictionary = {
 	# Constructibles
 	Keys.TENT: "res://Items/Constructibles/equipable_tent.tscn",
+	Keys.CAMPFIRE: "res://Items/Constructibles/equipable_campfire.tscn",
 	# Consumables
 	Keys.MUSHROOM: "res://Items/Consumables/equipable_mushroom.tscn",
 	# Weapons
@@ -81,6 +83,7 @@ const PICKUPABLE_ITEM_SCENES: Dictionary = {
 
 const CONSTRUCTIBLE_SCENES: Dictionary = {
 	Keys.TENT: "res://Objects/Constructibles/constructible_tent.tscn",
+	Keys.CAMPFIRE: "res://Objects/Constructibles/constructible_campfire.tscn",
 }
 
 
@@ -102,3 +105,4 @@ static func get_pickupable_scene(item_key: Keys) -> PackedScene:
 
 static func get_constructible_scene(item_key: Keys) -> PackedScene:
 	return load(CONSTRUCTIBLE_SCENES.get(item_key))
+

@@ -1,61 +1,62 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4l2xoh2y7qc"]
+[gd_scene load_steps=6 format=3 uid="uid://dni5gt6jybtyx"]
 
-[ext_resource type="PackedScene" uid="uid://byr4cmpswpi74" path="res://Items/Templates/equipable_constructible_template.tscn" id="1_iwgj6"]
-[ext_resource type="PackedScene" uid="uid://cp3qd7250fqxy" path="res://Assets/meshes/tent.tscn" id="2_u4bfc"]
+[ext_resource type="PackedScene" uid="uid://byr4cmpswpi74" path="res://Items/Templates/equipable_constructible_template.tscn" id="1_kc1uv"]
+[ext_resource type="PackedScene" uid="uid://bv1epdegkaj6v" path="res://Assets/meshes/campfire.tscn" id="3_x4l00"]
 
 [sub_resource type="Animation" id="Animation_p1bqa"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshHolder/Tent:position")
+tracks/0/path = NodePath("MeshHolder/Campfire:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.3, -0.25, -0.35)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MeshHolder/Tent:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 2.18166, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshHolder/Campfire:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.3, -0.25, -0.35)]
+}
 
 [sub_resource type="Animation" id="Animation_41354"]
 resource_name = "use_item"
 length = 0.3
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshHolder/Tent:position")
+tracks/0/path = NodePath("MeshHolder/Campfire:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.3, -0.25, -0.35), Vector3(0.16, -0.5, -0.4), Vector3(0.3, -0.25, -0.35)]
+"values": [Vector3(0, 2.18166, 0), Vector3(0.331613, 2.26893, -0.959931), Vector3(0, 2.18166, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MeshHolder/Tent:rotation")
+tracks/1/path = NodePath("MeshHolder/Campfire:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 2.18166, 0), Vector3(0.331613, 2.26893, -0.959931), Vector3(0, 2.18166, 0)]
+"values": [Vector3(0.3, -0.25, -0.35), Vector3(0.16, -0.5, -0.4), Vector3(0.3, -0.25, -0.35)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -81,12 +82,12 @@ _data = {
 "use_item": SubResource("Animation_41354")
 }
 
-[node name="EquipableConstructibleTent" instance=ExtResource("1_iwgj6")]
+[node name="EquipableConstructibleCampfire" instance=ExtResource("1_kc1uv")]
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {
 "": SubResource("AnimationLibrary_ak2l3")
 }
 
-[node name="Tent" parent="MeshHolder" index="0" instance=ExtResource("2_u4bfc")]
-transform = Transform3D(-0.0573575, 0, 0.0819153, 0, 0.1, 0, -0.0819153, 0, -0.0573575, 0.3, -0.25, -0.35)
+[node name="Campfire" parent="MeshHolder" index="0" instance=ExtResource("3_x4l00")]
+transform = Transform3D(-0.114715, 0, 0.163831, 0, 0.2, 0, -0.163831, 0, -0.114715, 0.3, -0.25, -0.35)
