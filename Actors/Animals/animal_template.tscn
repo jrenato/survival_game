@@ -25,6 +25,10 @@ autostart = true
 unique_name_in_owner = true
 one_shot = true
 
+[node name="FleeTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+one_shot = true
+
 [node name="DisappearAfterDeathTimer" type="Timer" parent="Timers"]
 unique_name_in_owner = true
 one_shot = true
