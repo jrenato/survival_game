@@ -5,3 +5,4 @@ class_name ItemResource extends Resource
 @export var icon: Texture2D
 @export_multiline var description: String = ""
 @export var is_equipable: bool = false
+@export var cooking_recipe: CookingRecipeResource

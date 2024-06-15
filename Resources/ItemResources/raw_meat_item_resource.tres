@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://41xq1n5ggjqx"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://41xq1n5ggjqx"]
 
 [ext_resource type="Texture2D" uid="uid://bir7q431pfrs1" path="res://Assets/textures/item_icons/raw_meat.png" id="1_mo833"]
+[ext_resource type="Resource" uid="uid://coforbj5h53xy" path="res://Resources/CookingRecipes/meat_recipe.tres" id="1_u4tv3"]
 [ext_resource type="Script" path="res://Resources/ItemResources/item_resource.gd" id="2_mts0i"]
 
 [resource]
@@ -10,3 +11,4 @@ display_name = "Raw Meat"
 icon = ExtResource("1_mo833")
 description = "Some raw meat. Needs to be cooked."
 is_equipable = false
+cooking_recipe = ExtResource("1_u4tv3")
