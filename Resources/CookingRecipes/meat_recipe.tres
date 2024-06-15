@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CookingRecipeResource" load_steps=4 format=3 uid="uid://coforbj5h53xy"]
 
 [ext_resource type="PackedScene" uid="uid://w873fdvyc3ew" path="res://Assets/meshes/cooked_meat.tscn" id="1_1tjkn"]
-[ext_resource type="Script" path="res://Resources/CookingRecipes/cooking_recipe_resource.gd" id="1_87b86"]
+[ext_resource type="Script" path="res://Resources/cooking_recipe_resource.gd" id="1_87b86"]
 [ext_resource type="PackedScene" uid="uid://cmd36bhterxgu" path="res://Assets/meshes/raw_meat.tscn" id="3_v3wnn"]
 
 [resource]

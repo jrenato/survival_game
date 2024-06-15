@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponItemResource" load_steps=3 format=3 uid="uid://bkp8jd2t8k75i"]
 
-[ext_resource type="Script" path="res://Resources/ItemResources/weapon_item_resource.gd" id="1_7178c"]
+[ext_resource type="Script" path="res://Resources/weapon_item_resource.gd" id="1_7178c"]
 [ext_resource type="Texture2D" uid="uid://56yoca2r0cag" path="res://Assets/textures/item_icons/axe.png" id="1_lq2oj"]
 
 [resource]
