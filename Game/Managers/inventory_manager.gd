@@ -13,6 +13,7 @@ func _enter_tree() -> void:
 	EventSystem.switched_two_items.connect(_on_switched_two_items)
 	EventSystem.crafted_item.connect(_on_crafted_item)
 	EventSystem.deleted_item_by_index.connect(_on_deleted_item_by_index)
+	EventSystem.added_item_by_index.connect(_on_added_item_by_index)
 
 
 func _ready() -> void:
@@ -101,4 +102,13 @@ func _on_deleted_item_by_index(index: int, is_in_hotbar: bool) -> void:
 		update_hotbar()
 	else:
 		inventory[index] = null
+		update_inventory()
+
+
+func _on_added_item_by_index(item_key: ItemConfig.Keys, index: int, is_in_hotbar: bool) -> void:
+	if is_in_hotbar:
+		hotbar[index] = item_key
+		update_hotbar()
+	else:
+		inventory[index] = item_key
 		update_inventory()

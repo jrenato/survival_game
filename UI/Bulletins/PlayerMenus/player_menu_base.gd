@@ -35,7 +35,7 @@ func close() -> void:
 
 func update_inventory(inventory: Array) -> void:
 	for i in inventory.size():
-		inventory_container.get_child(i).set_item_key(inventory[i])
+		inventory_container.get_child(i).item_key = inventory[i]
 
 
 func _on_inventory_updated(inventory: Array) -> void:

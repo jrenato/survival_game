@@ -18,6 +18,7 @@ signal crafted_item(item_key: ItemConfig.Keys)
 signal added_item(item_key: ItemConfig.Keys)
 signal removed_item(item_key: ItemConfig.Keys)
 signal deleted_item_by_index(index: int, is_in_hotbar: bool)
+signal added_item_by_index(item_key: ItemConfig.Keys, index: int, is_in_hotbar: bool)
 
 # Hotbar
 signal hotbar_updated(hotbar: Array)

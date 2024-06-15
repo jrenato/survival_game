@@ -3,12 +3,10 @@ class_name InventorySlot extends TextureRect
 
 @onready var icon_texture: TextureRect = %IconTextureRect
 
-var item_key: Variant
-
-
-func set_item_key(_item_key: Variant) -> void:
-	item_key = _item_key
-	update_icon()
+var item_key: Variant:
+	set(value):
+		item_key = value
+		update_icon()
 
 
 func update_icon() -> void:
@@ -39,17 +37,33 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 
 
 func _can_drop_data(at_position: Vector2, origin_slot: Variant) -> bool:
-	if item_key != null and origin_slot is HotBarSlot:
-		return ItemConfig.get_item_resource(item_key).is_equipable
-		
+	if item_key != null:
+		if origin_slot is HotBarSlot:
+			return ItemConfig.get_item_resource(item_key).is_equipable
+
+		if origin_slot is StartCookingSlot:
+			return ItemConfig.get_item_resource(item_key).cooking_recipe != null
+
+		if origin_slot is FinalCookingSlot:
+			return false
+
 	return origin_slot is InventorySlot
 
 
 func _drop_data(at_position: Vector2, origin_slot: Variant) -> void:
-	EventSystem.switched_two_items.emit(
-		origin_slot.get_index(),
-		origin_slot is HotBarSlot,
-		get_index(),
-		self is HotBarSlot
-	)
+	if origin_slot is StartCookingSlot:
+		var temp_own_key: Variant = item_key
+		EventSystem.added_item_by_index.emit(origin_slot.item_key, get_index(), self is HotBarSlot)
+		origin_slot.item_key = temp_own_key
 
+	if origin_slot is FinalCookingSlot:
+		EventSystem.added_item_by_index.emit(origin_slot.item_key, get_index(), self is HotBarSlot)
+		origin_slot.item_key = null
+
+	else:
+		EventSystem.switched_two_items.emit(
+			origin_slot.get_index(),
+			origin_slot is HotBarSlot,
+			get_index(),
+			self is HotBarSlot
+		)

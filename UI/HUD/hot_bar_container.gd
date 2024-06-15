@@ -8,7 +8,7 @@ func _enter_tree() -> void:
 
 func _on_hotbar_updated(hotbar: Array) -> void:
 	for hotbar_slot in get_children():
-		hotbar_slot.set_item_key(hotbar[hotbar_slot.get_index()])
+		hotbar_slot.item_key = hotbar[hotbar_slot.get_index()]
 
 
 func _on_updated_active_hotbar_slot(active_index: Variant) -> void:

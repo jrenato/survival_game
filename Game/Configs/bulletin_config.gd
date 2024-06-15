@@ -3,11 +3,13 @@ class_name BulletinConfig
 enum Keys {
 	INTERACTION_PROMPT,
 	CRAFTING_MENU,
+	COOKING_MENU,
 }
 
 const BULLETIN_PATHS: Dictionary = {
 	Keys.INTERACTION_PROMPT: "res://UI/Bulletins/interaction_prompt.tscn",
 	Keys.CRAFTING_MENU: "res://UI/Bulletins/PlayerMenus/crafting_menu.tscn",
+	Keys.COOKING_MENU: "res://UI/Bulletins/PlayerMenus/cooking_menu.tscn",
 }
 
 
