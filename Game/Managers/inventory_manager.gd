@@ -23,6 +23,7 @@ func _ready() -> void:
 	inventory[0] = ItemConfig.Keys.AXE
 	inventory[1] = ItemConfig.Keys.TENT
 	inventory[2] = ItemConfig.Keys.CAMPFIRE
+	inventory[3] = ItemConfig.Keys.RAWMEAT
 
 
 func add_item(item_key: ItemConfig.Keys) -> void:

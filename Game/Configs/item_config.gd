@@ -50,6 +50,7 @@ const ITEM_RESOURCE_PATHS: Dictionary = {
 	Keys.LOG: "res://Resources/ItemResources/log_item_resource.tres",
 	Keys.COAL: "res://Resources/ItemResources/coal_item_resource.tres",
 	Keys.RAWMEAT: "res://Resources/ItemResources/raw_meat_item_resource.tres",
+	Keys.COOKEDMEAT: "res://Resources/ItemResources/cooked_meat_item_resource.tres",
 	Keys.TENT: "res://Resources/ItemResources/tent_item_resource.tres",
 	Keys.CAMPFIRE: "res://Resources/ItemResources/campfire_item_resource.tres",
 }

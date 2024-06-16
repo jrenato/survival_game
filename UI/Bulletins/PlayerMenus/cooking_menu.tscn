@@ -46,6 +46,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 48)
 layout_mode = 2
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.005
 nine_patch_stretch = true
 texture_under = ExtResource("3_u6lkr")
 texture_progress = ExtResource("3_u6lkr")
@@ -58,6 +60,7 @@ layout_mode = 2
 script = ExtResource("5_k3l6u")
 
 [node name="CookButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer" index="1"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(196, 64)
 layout_mode = 2
 size_flags_horizontal = 4

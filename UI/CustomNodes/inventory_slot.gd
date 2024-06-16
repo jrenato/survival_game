@@ -55,10 +55,12 @@ func _drop_data(at_position: Vector2, origin_slot: Variant) -> void:
 		var temp_own_key: Variant = item_key
 		EventSystem.added_item_by_index.emit(origin_slot.item_key, get_index(), self is HotBarSlot)
 		origin_slot.item_key = temp_own_key
+		origin_slot.start_ingredient_enable.emit()
 
 	if origin_slot is FinalCookingSlot:
 		EventSystem.added_item_by_index.emit(origin_slot.item_key, get_index(), self is HotBarSlot)
 		origin_slot.item_key = null
+		origin_slot.cooked_food_taken.emit()
 
 	else:
 		EventSystem.switched_two_items.emit(
