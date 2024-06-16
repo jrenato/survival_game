@@ -27,5 +27,4 @@ func _can_drop_data(at_position: Vector2, origin_slot: Variant) -> bool:
 func _drop_data(at_position: Vector2, origin_slot: Variant) -> void:
 	item_key = origin_slot.item_key
 	EventSystem.deleted_item_by_index.emit(origin_slot.get_index(), origin_slot is HotBarSlot)
-	print(self, " ", origin_slot)
 	start_ingredient_enable.emit()

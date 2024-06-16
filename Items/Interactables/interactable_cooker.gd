@@ -70,7 +70,6 @@ func cooking_started() -> void:
 
 func cooking_finished() -> void:
 	state = STATE.COOKED
-	cooking_timer.stop()
 
 	clear_food_visuals()
 

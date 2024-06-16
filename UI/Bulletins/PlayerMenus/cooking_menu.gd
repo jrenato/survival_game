@@ -31,6 +31,7 @@ func _ready() -> void:
 	start_cooking_slot.start_ingredient_disable.connect(_on_start_ingredient_disable)
 
 	final_cooking_slot.cooked_food_taken.connect(interactable_cooker.cooked_item_removed)
+	cook_button.pressed.connect(_on_cook_button_pressed)
 
 	if cooking_state == InteractableCooker.STATE.READY:
 		start_cooking_slot.item_key = cooking_recipe.uncooked_item
@@ -59,7 +60,7 @@ func start_cooking() -> void:
 
 	tween.tween_callback(_on_finished_cooking)
 
-	if cooking_state == InteractableCooker.STATE.COOKING:
+	if cooking_state != InteractableCooker.STATE.COOKING:
 		interactable_cooker.cooking_started()
 
 
@@ -69,7 +70,7 @@ func close() -> void:
 	EventSystem.enabled_player.emit()
 
 
-func _on_cooking_slot_mouse_entered(cooking_slot: StartCookingSlot) -> void:
+func _on_cooking_slot_mouse_entered(cooking_slot: InventorySlot) -> void:
 	Input.set_custom_mouse_cursor(CursorLibrary.get_cursor(CursorLibrary.CURSOR_TYPE.INTERACT))
 
 
@@ -92,11 +93,11 @@ func _on_start_ingredient_disable() -> void:
 
 
 func _on_finished_cooking() -> void:
-	final_cooking_slot.item_key = cooking_recipe.cooked_key
+	final_cooking_slot.item_key = cooking_recipe.cooked_item
 	start_cooking_slot.item_key = null
 	cooking_progress_bar.value = 0
 	start_cooking_slot.is_cooking_in_progress = false
 
 
-func cooking_started():
-	pass # Replace with function body.
+func _on_cook_button_pressed():
+	start_cooking()

@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://x6qo4tct8406" path="res://Assets/textures/square32.png" id="3_u6lkr"]
 [ext_resource type="Script" path="res://UI/CustomNodes/final_cooking_slot.gd" id="5_k3l6u"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cminc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbhuh"]
+bg_color = Color(0, 0, 0, 0.627451)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfajf"]
 bg_color = Color(0, 0, 0, 0.235294)
@@ -19,6 +20,7 @@ bg_color = Color(0, 0, 0, 0.352941)
 bg_color = Color(0.32549, 0.32549, 0.32549, 1)
 
 [node name="CookingMenu" instance=ExtResource("1_83pc8")]
+z_index = 0
 script = ExtResource("2_fdv61")
 
 [node name="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer/NinePatchRect" index="0"]
@@ -66,9 +68,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxEmpty_cminc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qbhuh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_pfajf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cucus")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_0jd26")
-disabled = true
 text = "Cook"
