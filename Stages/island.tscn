@@ -412,7 +412,7 @@ reference_frame = 0
 [sub_resource type="Resource" id="Resource_i6ulp"]
 script = ExtResource("7_40erc")
 ray_direction = Vector3(0, -1, 0)
-ray_length = 1.0
+ray_length = 0.5
 ray_offset = 5.0
 remove_points_on_miss = true
 align_with_collision_normal = false
