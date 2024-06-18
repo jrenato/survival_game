@@ -71,6 +71,8 @@ func try_to_construct() -> void:
 	)
 	is_constructing = true
 
+	EventSystem.play_sound.emit(SFXConfig.Keys.BUILD)
+
 
 func destroy_self() -> void:
 	if not is_constructing:

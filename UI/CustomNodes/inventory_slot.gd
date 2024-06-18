@@ -31,6 +31,8 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 		drag_preview.add_child(texture_rect)
 		set_drag_preview(drag_preview)
 
+		EventSystem.play_sound.emit(SFXConfig.Keys.UI_CLICK)
+
 		return self
 
 	return null
@@ -69,3 +71,5 @@ func _drop_data(at_position: Vector2, origin_slot: Variant) -> void:
 			get_index(),
 			self is HotBarSlot
 		)
+
+	EventSystem.play_sound.emit(SFXConfig.Keys.UI_CLICK)

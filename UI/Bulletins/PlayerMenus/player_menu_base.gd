@@ -26,11 +26,14 @@ func _ready() -> void:
 			hotbar_slot.mouse_entered.connect(_on_inventory_slot_mouse_entered.bind(hotbar_slot))
 			hotbar_slot.mouse_exited.connect(_on_inventory_slot_mouse_exited)
 
+	EventSystem.play_sound.emit(SFXConfig.Keys.UI_CLICK)
+
 
 func close() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	EventSystem.disabled_bulletin.emit(BulletinConfig.Keys.CRAFTING_MENU)
 	EventSystem.enabled_player.emit()
+	EventSystem.play_sound.emit(SFXConfig.Keys.UI_CLICK)
 
 
 func update_inventory(inventory: Array) -> void:

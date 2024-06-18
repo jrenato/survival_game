@@ -27,3 +27,7 @@ func check_hit() -> void:
 
 	if not result.is_empty():
 		result.collider.take_hit(weapon_item_resource)
+
+
+func play_attack_sound() -> void: 
+	EventSystem.play_sound.emit(SFXConfig.Keys.ATTACK)

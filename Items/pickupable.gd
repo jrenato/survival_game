@@ -11,4 +11,5 @@ func start_interaction() -> void:
 
 
 func destroy_self() -> void:
+	EventSystem.play_sound.emit(SFXConfig.Keys.ITEM_PICKUP)
 	parent.queue_free()

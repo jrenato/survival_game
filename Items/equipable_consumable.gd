@@ -9,6 +9,8 @@ func consume() -> void:
 	EventSystem.changed_energy.emit(consumable_item_resource.energy_change)
 	EventSystem.deleted_equipped_item.emit()
 
+	EventSystem.play_sound.emit(SFXConfig.Keys.EAT)
+
 
 func destroy_self() -> void:
 	EventSystem.item_unequipped.emit()

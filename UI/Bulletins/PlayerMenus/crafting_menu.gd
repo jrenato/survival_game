@@ -76,3 +76,4 @@ func _on_crafting_button_mouse_exited() -> void:
 
 func _on_crafting_button_pressed(crafting_button: CraftingButton):
 	EventSystem.crafted_item.emit(crafting_button.item_key)
+	EventSystem.play_sound.emit(SFXConfig.Keys.CRAFT)

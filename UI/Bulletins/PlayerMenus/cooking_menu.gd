@@ -62,12 +62,14 @@ func start_cooking() -> void:
 
 	if cooking_state != InteractableCooker.STATE.COOKING:
 		interactable_cooker.cooking_started()
+		EventSystem.play_sound.emit(SFXConfig.Keys.UI_CLICK)
 
 
 func close() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	EventSystem.disabled_bulletin.emit(BulletinConfig.Keys.COOKING_MENU)
 	EventSystem.enabled_player.emit()
+	EventSystem.play_sound.emit(SFXConfig.Keys.UI_CLICK)
 
 
 func _on_cooking_slot_mouse_entered(cooking_slot: InventorySlot) -> void:
