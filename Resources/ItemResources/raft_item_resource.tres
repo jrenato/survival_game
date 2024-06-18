@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://b8l7rurwcwi4m"]
+
+[ext_resource type="Texture2D" uid="uid://b4rcaqqyiiq0n" path="res://Assets/textures/item_icons/raft.png" id="1_rau3d"]
+[ext_resource type="Script" path="res://Resources/item_resource.gd" id="2_aypj5"]
+
+[resource]
+script = ExtResource("2_aypj5")
+item_key = 18
+display_name = "Raft"
+icon = ExtResource("1_rau3d")
+description = "An improvised raft"
+is_equipable = true

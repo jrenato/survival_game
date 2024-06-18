@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CraftingBlueprintResource" load_steps=5 format=3 uid="uid://vpegn1710jkj"]
+
+[ext_resource type="Script" path="res://Resources/blueprint_cost_data.gd" id="1_ublgd"]
+[ext_resource type="Script" path="res://Resources/crafting_blueprint_resource.gd" id="2_nytex"]
+
+[sub_resource type="Resource" id="Resource_k1ow8"]
+script = ExtResource("1_ublgd")
+item_key = 0
+amount = 3
+
+[sub_resource type="Resource" id="Resource_a24dx"]
+script = ExtResource("1_ublgd")
+item_key = 1
+amount = 10
+
+[resource]
+script = ExtResource("2_nytex")
+item_key = 12
+costs = Array[ExtResource("1_ublgd")]([SubResource("Resource_k1ow8"), SubResource("Resource_a24dx")])
+needs_multitool = false
+needs_tinderbox = true

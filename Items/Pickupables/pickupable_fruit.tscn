@@ -1,22 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://be8r3ph30gnae"]
+[gd_scene load_steps=4 format=3 uid="uid://cuymms7rhn48s"]
 
 [ext_resource type="PackedScene" uid="uid://ce14eqobmk4aj" path="res://Items/Templates/pickupable_template.tscn" id="1_7vqbk"]
-[ext_resource type="PackedScene" uid="uid://dshrjpkk7oq1a" path="res://Assets/meshes/stone.tscn" id="2_ad4is"]
+[ext_resource type="PackedScene" uid="uid://cnb6v6p8kfumo" path="res://Assets/meshes/fruit.tscn" id="3_ghicp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vsytr"]
 radius = 0.0724227
 height = 0.229918
 
-[node name="PickupableStone" instance=ExtResource("1_7vqbk")]
+[node name="PickupableFruit" instance=ExtResource("1_7vqbk")]
 
 [node name="Pickupable" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0755238, 0)
-item_key = 1
-prompt = "Pickup stone"
+item_key = 4
+prompt = "Pickup fruit"
 
 [node name="CollisionShape3D" parent="Pickupable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, -1.06581e-14, 0, 1.06581e-14, 1, 0, -0.0067439, 0)
 shape = SubResource("CapsuleShape3D_vsytr")
 
-[node name="Stone" parent="." index="1" instance=ExtResource("2_ad4is")]
+[node name="Fruit" parent="." index="1" instance=ExtResource("3_ghicp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0755238, 0)

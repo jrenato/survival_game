@@ -29,14 +29,13 @@ func die() -> void:
 	for marker in item_spawn_points.get_children():
 		EventSystem.object_spawned.emit(scene_to_spawn, marker.global_transform)
 
-	if residue_static_body == null:
-		queue_free()
-
 	for child in get_children():
 		child.queue_free()
 
-	if residue_static_body:
+	if residue_static_body != null:
 		add_child(residue_static_body)
+	else:
+		queue_free()
 
 
 func _on_register_hit(weapon_item_resource: WeaponItemResource) -> void:

@@ -8,7 +8,7 @@ script = ExtResource("1_l6765")
 item_key = 0
 amount = 1
 
-[sub_resource type="Resource" id="Resource_a24dx"]
+[sub_resource type="Resource" id="Resource_lhlvi"]
 script = ExtResource("1_l6765")
 item_key = 1
 amount = 1
@@ -21,4 +21,6 @@ amount = 1
 [resource]
 script = ExtResource("1_thfpv")
 item_key = 10
-costs = Array[ExtResource("1_l6765")]([SubResource("Resource_k1ow8"), SubResource("Resource_a24dx"), SubResource("Resource_j3ak5")])
+costs = Array[ExtResource("1_l6765")]([SubResource("Resource_k1ow8"), SubResource("Resource_lhlvi"), SubResource("Resource_j3ak5")])
+needs_multitool = false
+needs_tinderbox = false

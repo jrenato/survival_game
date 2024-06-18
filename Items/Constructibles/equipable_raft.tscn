@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4l2xoh2y7qc"]
+[gd_scene load_steps=6 format=3 uid="uid://bx7wg8bst5ebs"]
 
-[ext_resource type="PackedScene" uid="uid://byr4cmpswpi74" path="res://Items/Templates/equipable_constructible_template.tscn" id="1_iwgj6"]
-[ext_resource type="PackedScene" uid="uid://cp3qd7250fqxy" path="res://Assets/meshes/tent.tscn" id="2_u4bfc"]
+[ext_resource type="PackedScene" uid="uid://byr4cmpswpi74" path="res://Items/Templates/equipable_constructible_template.tscn" id="1_j6yay"]
+[ext_resource type="PackedScene" uid="uid://dmiky1sjsmxp1" path="res://Assets/meshes/raft.tscn" id="3_g3rhw"]
 
 [sub_resource type="Animation" id="Animation_p1bqa"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshHolder/Tent:position")
+tracks/0/path = NodePath("MeshHolder/Raft:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -20,7 +20,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MeshHolder/Tent:rotation")
+tracks/1/path = NodePath("MeshHolder/Raft:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -36,7 +36,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshHolder/Tent:position")
+tracks/0/path = NodePath("MeshHolder/Raft:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -48,7 +48,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MeshHolder/Tent:rotation")
+tracks/1/path = NodePath("MeshHolder/Raft:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -81,12 +81,12 @@ _data = {
 "use_item": SubResource("Animation_41354")
 }
 
-[node name="EquipableTent" instance=ExtResource("1_iwgj6")]
+[node name="EquipableRaft" instance=ExtResource("1_j6yay")]
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {
 "": SubResource("AnimationLibrary_ak2l3")
 }
 
-[node name="Tent" parent="MeshHolder" index="0" instance=ExtResource("2_u4bfc")]
-transform = Transform3D(-0.0573575, 0, 0.0819153, 0, 0.1, 0, -0.0819153, 0, -0.0573575, 0.3, -0.25, -0.35)
+[node name="Raft" parent="MeshHolder" index="0" instance=ExtResource("3_g3rhw")]
+transform = Transform3D(-0.0401503, 0, 0.0573407, 0, 0.07, 0, -0.0573407, 0, -0.0401503, 0.3, -0.25, -0.35)

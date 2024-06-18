@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ConsumableItemResource" load_steps=3 format=3 uid="uid://b2f1x7g1xs1og"]
+
+[ext_resource type="Texture2D" uid="uid://b31kmn83ckre4" path="res://Assets/textures/item_icons/fruit.png" id="1_lmew1"]
+[ext_resource type="Script" path="res://Resources/consumable_item_resource.gd" id="2_6obok"]
+
+[resource]
+script = ExtResource("2_6obok")
+health_change = 10.0
+energy_change = 5.0
+item_key = 4
+display_name = "Fruit"
+icon = ExtResource("1_lmew1")
+description = "A succulent fruit"
+is_equipable = true

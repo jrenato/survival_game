@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponItemResource" load_steps=3 format=3 uid="uid://lnqr57j4sq46"]
+
+[ext_resource type="Texture2D" uid="uid://dh0ctj6upfswi" path="res://Assets/textures/item_icons/torch.png" id="1_g36v0"]
+[ext_resource type="Script" path="res://Resources/weapon_item_resource.gd" id="2_si3ul"]
+
+[resource]
+script = ExtResource("2_si3ul")
+damage = 3.0
+weapon_range = 0.5
+energy_change_per_use = -0.5
+item_key = 16
+display_name = "Torch"
+icon = ExtResource("1_g36v0")
+description = "An improvised torch"
+is_equipable = true

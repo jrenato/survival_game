@@ -7,14 +7,14 @@
 offsets = PackedFloat32Array(0, 0.411765, 1)
 colors = PackedColorArray(0.827451, 0.619608, 0, 0.666667, 0.925059, 0.0768258, 1.92523e-07, 1, 0.835294, 0.294118, 0, 0.670588)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_oyc7b"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6vssa"]
 gradient = SubResource("Gradient_hc20h")
 
 [sub_resource type="Curve" id="Curve_kw767"]
 _data = [Vector2(0, 0.252747), 0.0, 0.0, 0, 0, Vector2(0.252525, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.450549), -2.09524, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_vxb68"]
+[sub_resource type="CurveTexture" id="CurveTexture_lhjwo"]
 curve = SubResource("Curve_kw767")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_61km8"]
@@ -26,14 +26,14 @@ spread = 10.0
 initial_velocity_min = 1.5
 initial_velocity_max = 2.0
 gravity = Vector3(0, 1, 0)
-scale_curve = SubResource("CurveTexture_vxb68")
-color_ramp = SubResource("GradientTexture1D_oyc7b")
+scale_curve = SubResource("CurveTexture_lhjwo")
+color_ramp = SubResource("GradientTexture1D_6vssa")
 turbulence_enabled = true
 turbulence_noise_speed_random = 2.0
 turbulence_influence_min = 0.01
 turbulence_influence_max = 0.06
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bgwuc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oy7cc"]
 transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
@@ -45,7 +45,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_82kvu"]
-material = SubResource("StandardMaterial3D_bgwuc")
+material = SubResource("StandardMaterial3D_oy7cc")
 size = Vector2(0.1, 0.1)
 
 [node name="InteractableCooker" type="Area3D"]
@@ -66,7 +66,7 @@ unique_name_in_owner = true
 emitting = false
 amount = 24
 lifetime = 0.5
-visibility_aabb = AABB(-0.653116, -1.22994, -0.690574, 1.30623, 2.45987, 1.38115)
+visibility_aabb = AABB(-0.653116, -0.302582, -0.690574, 1.30623, 1.63031, 1.38115)
 process_material = SubResource("ParticleProcessMaterial_61km8")
 draw_pass_1 = SubResource("QuadMesh_82kvu")
 

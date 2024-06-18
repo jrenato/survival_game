@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://3bdmv8txkgoj"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://3bdmv8txkgoj"]
 
-[ext_resource type="Resource" uid="uid://coforbj5h53xy" path="res://Resources/CookingRecipes/meat_recipe.tres" id="1_4b7ar"]
 [ext_resource type="Texture2D" uid="uid://vfm22f8745ia" path="res://Assets/textures/item_icons/cooked_meat.png" id="2_qrij5"]
 [ext_resource type="Script" path="res://Resources/item_resource.gd" id="3_n4g5o"]
 
@@ -10,5 +9,4 @@ item_key = 9
 display_name = "Cooked Meat"
 icon = ExtResource("2_qrij5")
 description = "A cooked meat"
-is_equipable = false
-cooking_recipe = ExtResource("1_4b7ar")
+is_equipable = true
