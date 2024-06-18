@@ -5,7 +5,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pmige"]
 
-[node name="Animal" type="CharacterBody3D"]
+[node name="AnimalTemplate" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 67
 script = ExtResource("1_wlr7u")
