@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://3bdmv8txkgoj"]
+[gd_resource type="Resource" script_class="ConsumableItemResource" load_steps=3 format=3 uid="uid://3bdmv8txkgoj"]
 
+[ext_resource type="Script" path="res://Resources/consumable_item_resource.gd" id="1_ogqqm"]
 [ext_resource type="Texture2D" uid="uid://vfm22f8745ia" path="res://Assets/textures/item_icons/cooked_meat.png" id="2_qrij5"]
-[ext_resource type="Script" path="res://Resources/item_resource.gd" id="3_n4g5o"]
 
 [resource]
-script = ExtResource("3_n4g5o")
+script = ExtResource("1_ogqqm")
+health_change = 15.0
+energy_change = 15.0
 item_key = 9
 display_name = "Cooked Meat"
 icon = ExtResource("2_qrij5")
