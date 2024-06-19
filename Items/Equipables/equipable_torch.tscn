@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8pig6mkos5lg"]
+[gd_scene load_steps=15 format=3 uid="uid://c8pig6mkos5lg"]
 
 [ext_resource type="PackedScene" uid="uid://bewrqffhmmsvp" path="res://Items/Templates/equipable_weapon_template.tscn" id="1_0u1tl"]
 [ext_resource type="PackedScene" uid="uid://cg2aa7b0fndsa" path="res://Assets/meshes/torch.tscn" id="3_af2h8"]
+[ext_resource type="AudioStream" uid="uid://bbuvjgln6cayr" path="res://Assets/audio/sfx/torch.wav" id="3_marf3"]
 
 [sub_resource type="Animation" id="Animation_etdli"]
 length = 0.001
@@ -158,3 +159,9 @@ lifetime = 0.5
 visibility_aabb = AABB(-0.653116, -1.22994, -0.690574, 1.30623, 2.45987, 1.38115)
 process_material = SubResource("ParticleProcessMaterial_632bh")
 draw_pass_1 = SubResource("QuadMesh_403os")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="MeshHolder/Torch" index="2"]
+stream = ExtResource("3_marf3")
+unit_size = 3.0
+autoplay = true
+bus = &"SFX"
