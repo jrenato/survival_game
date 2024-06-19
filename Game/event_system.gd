@@ -45,5 +45,6 @@ signal deleted_equipped_item
 signal object_spawned(object_scene: PackedScene, transform: Transform3D)
 
 # Music and Sounds
-signal play_sound(key: SFXConfig.Keys)
 signal play_music(key: MusicConfig.Keys)
+signal play_sound(key: SFXConfig.Keys)
+signal play_dynamic_sound(key: SFXConfig.Keys, position: Vector3)

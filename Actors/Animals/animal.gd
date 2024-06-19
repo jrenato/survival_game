@@ -20,6 +20,7 @@ enum STATE {
 @export var is_agressive: bool = false
 @export var attack_distance: float = 2.0
 @export var damage: float = 20.0
+@export var attack_audio_key: SFXConfig.Keys = SFXConfig.Keys.WOLF_ATTACK
 
 @export_group("Movement")
 @export var turn_speed_weight: float = 0.07
@@ -122,6 +123,10 @@ func attack_loop() -> void:
 func attack() -> void:
 	if player in attack_hit_area.get_overlapping_bodies():
 		EventSystem.changed_health.emit(-damage)
+
+
+func play_attack_audio() -> void:
+	EventSystem.play_dynamic_sound.emit(attack_audio_key, global_position)
 
 
 func look_forward() -> void:

@@ -599,9 +599,12 @@ tracks/44/path = NodePath("..")
 tracks/44/interp = 1
 tracks/44/loop_wrap = true
 tracks/44/keys = {
-"times": PackedFloat32Array(0.6),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"play_attack_audio"
+}, {
 "args": [],
 "method": &"attack"
 }]
@@ -4372,6 +4375,7 @@ _data = {
 radius = 0.263128
 
 [node name="Cow" node_paths=PackedStringArray("animation_player") instance=ExtResource("1_0p25l")]
+attack_audio_key = 9
 animation_player = NodePath("cow/AnimationPlayer")
 idle_animations = Array[String](["Eating", "Idle", "Idle_2", "Idle_Headlow"])
 hurt_animations = Array[String](["Idle_HitReact1", "Idle_HitReact2"])
@@ -4379,6 +4383,9 @@ hurt_animations = Array[String](["Idle_HitReact1", "Idle_HitReact2"])
 [node name="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.480074, 0)
 shape = SubResource("CapsuleShape3D_7aguw")
+
+[node name="Hitbox" parent="." index="1"]
+hit_audio_key = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.989295, -0.288002)

@@ -47,3 +47,7 @@ script = ExtResource("4_snsq6")
 
 [node name="PlayerStatsManager" type="Node" parent="Managers"]
 script = ExtResource("6_flvsu")
+
+[node name="FootstepAudioTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true

@@ -6,12 +6,16 @@ class_name Player extends CharacterBody3D
 @export var gravity: float = 0.2
 @export var mouse_sensitivity: float = 0.005
 @export var walking_energy_change_per_minute: float = -0.05
+@export var walking_footstep_interval: float = 0.6
+@export var sprinting_footstep_interval: float = 0.3
 
+var is_grounded: bool = true
 var is_sprinting: bool = false
 
 @onready var head: Node3D = %Head
 @onready var interaction_ray_cast: RayCast3D = %InteractionRayCast
 @onready var equipable_item_holder: ItemHolder = %EquipableItemHolder
+@onready var footstep_timer: Timer = %FootstepAudioTimer
 
 
 func _enter_tree() -> void:
@@ -52,11 +56,25 @@ func _unhandled_input(event: InputEvent) -> void:
 func move() -> void:
 	if is_on_floor():
 		is_sprinting = Input.is_action_pressed("sprint")
+
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = jump_velocity
+
+		if velocity != Vector3.ZERO and footstep_timer.is_stopped():
+			EventSystem.play_dynamic_sound.emit(SFXConfig.Keys.FOOTSTEP, global_position)
+			footstep_timer.start(walking_footstep_interval if not is_sprinting else sprinting_footstep_interval)
+
+		if not is_grounded:
+			is_grounded = true
+			EventSystem.play_dynamic_sound.emit(SFXConfig.Keys.JUMP_LAND, global_position)
+
 	else:
 		velocity.y -= gravity
+
 		is_sprinting = false
+
+		if is_grounded:
+			is_grounded = false
 
 	var speed: float = normal_speed if not is_sprinting else sprint_speed
 
