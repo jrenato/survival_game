@@ -15,6 +15,7 @@ enum Keys {
 	WOLF_ATTACK,
 	FOOTSTEP,
 	JUMP_LAND,
+	ENTER_TENT,
 }
 
 const FILE_PATHS: Dictionary = {
@@ -32,6 +33,7 @@ const FILE_PATHS: Dictionary = {
 	Keys.WOLF_ATTACK: "res://Assets/audio/sfx/wolf_attack.wav",
 	Keys.FOOTSTEP: "res://Assets/audio/sfx/footstep.wav",
 	Keys.JUMP_LAND: "res://Assets/audio/sfx/jump_land.wav",
+	Keys.ENTER_TENT: "res://Assets/audio/sfx/go_in_tent.wav",
 }
 
 

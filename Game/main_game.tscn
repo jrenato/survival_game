@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cetqfqbo47fqx"]
+[gd_scene load_steps=7 format=3 uid="uid://cetqfqbo47fqx"]
 
 [ext_resource type="Script" path="res://Game/Managers/stage_controller.gd" id="1_88a2k"]
 [ext_resource type="PackedScene" uid="uid://bllps4g7wx4gj" path="res://UI/HUD/hud.tscn" id="1_xho0w"]
 [ext_resource type="Script" path="res://Game/Managers/bulletin_controller.gd" id="2_i4u47"]
 [ext_resource type="Script" path="res://Game/Managers/music_controller.gd" id="4_hvjiv"]
 [ext_resource type="Script" path="res://Game/Managers/sfx_controller.gd" id="5_67rjm"]
+[ext_resource type="Script" path="res://Game/Managers/game_fade_controller.gd" id="6_l0sg7"]
 
 [node name="MainGame" type="Node"]
 
@@ -25,3 +26,13 @@ script = ExtResource("4_hvjiv")
 
 [node name="SFXController" type="AudioStreamPlayer" parent="."]
 script = ExtResource("5_67rjm")
+
+[node name="GameFadeController" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+script = ExtResource("6_l0sg7")
