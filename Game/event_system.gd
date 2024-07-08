@@ -29,6 +29,11 @@ signal added_item_by_index(item_key: ItemConfig.Keys, index: int, is_in_hotbar: 
 ## Interaction
 signal tried_to_interact
 
+## Stage Management
+signal stage_changed(stage: StageConfig.Keys)
+signal hud_hide
+signal hud_show
+
 ## Player
 signal enabled_player
 signal disabled_player

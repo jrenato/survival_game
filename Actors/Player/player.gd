@@ -25,6 +25,11 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	EventSystem.hud_show.emit()
+
+
+func _exit_tree() -> void:
+	EventSystem.hud_hide.emit()
 
 
 func _process(delta: float) -> void:

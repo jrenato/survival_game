@@ -4,6 +4,8 @@ var can_drop_cursor_img = load("res://Assets/icons/hand_closed.png")
 var forbidden_cursor_img = load("res://Assets/icons/disabled.png")
 
 func _ready() -> void:
+	EventSystem.stage_changed.connect(change_stage)
+
 	Input.set_custom_mouse_cursor(
 		CursorLibrary.get_cursor(CursorLibrary.CURSOR_TYPE.DROP),
 		Input.CURSOR_CAN_DROP
@@ -13,7 +15,7 @@ func _ready() -> void:
 		Input.CURSOR_FORBIDDEN
 	)
 
-	change_stage(StageConfig.Keys.ISLAND)
+	change_stage(StageConfig.Keys.MAIN_MENU)
 
 
 func change_stage(key: StageConfig.Keys) -> void:

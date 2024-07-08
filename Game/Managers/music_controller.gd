@@ -3,7 +3,7 @@ class_name MusicController extends AudioStreamPlayer
 
 func _ready() -> void:
 	bus = "Music"
-	play_music(MusicConfig.Keys.ISLAND_AMBIANCE)
+	EventSystem.play_music.connect(play_music)
 
 
 func play_music(key: MusicConfig.Keys) -> void:
