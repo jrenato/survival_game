@@ -8,8 +8,8 @@ enum Keys {
 
 
 const STAGE_PATHS: Dictionary = {
-	Keys.ISLAND: preload("res://Stages/island.tscn"),
-	Keys.MAIN_MENU: preload("res://Stages/main_menu.tscn"),
+	Keys.ISLAND: preload("res://Stages/Island/island.tscn"),
+	Keys.MAIN_MENU: preload("res://Stages/MainMenu/main_menu.tscn"),
 }
 
 

@@ -7,6 +7,7 @@ var bulletins: Dictionary = {}
 func _enter_tree() -> void:
 	EventSystem.enabled_bulletin.connect(_on_enabled_bulletin)
 	EventSystem.disabled_bulletin.connect(_on_disabled_bulletin)
+	EventSystem.destroy_all_bulletins.connect(_on_destroy_all_bulletins)
 
 
 func create_bulletin(key: BulletinConfig.Keys, extra_args: Variant = null) -> void:
@@ -31,3 +32,10 @@ func _on_enabled_bulletin(key: BulletinConfig.Keys, extra_args: Variant = null) 
 
 func _on_disabled_bulletin(key: BulletinConfig.Keys) -> void:
 	destroy_bulletin(key)
+
+
+func _on_destroy_all_bulletins() -> void:
+	for child in get_children():
+		child.queue_free()
+
+	bulletins.clear()

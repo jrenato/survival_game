@@ -1,24 +1,25 @@
-[gd_scene load_steps=49 format=3 uid="uid://b11i8wittg66q"]
+[gd_scene load_steps=44 format=3 uid="uid://b11i8wittg66q"]
 
-[ext_resource type="Script" path="res://Game/shaking_camera.gd" id="1_ddbuj"]
-[ext_resource type="Script" path="res://Stages/main_menu.gd" id="1_ika0g"]
-[ext_resource type="PackedScene" uid="uid://cljsgebwjefua" path="res://Assets/meshes/terrain.tscn" id="1_w04b6"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter.gd" id="2_qrf57"]
-[ext_resource type="PackedScene" uid="uid://dnpd03ip5jknv" path="res://Assets/meshes/water.tscn" id="2_s6k2h"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="3_rfbys"]
-[ext_resource type="PackedScene" uid="uid://cp3qd7250fqxy" path="res://Assets/meshes/tent.tscn" id="3_rfukl"]
-[ext_resource type="PackedScene" uid="uid://bv1epdegkaj6v" path="res://Assets/meshes/campfire.tscn" id="4_2hl24"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="4_c1g63"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_rotation.gd" id="5_d3fnf"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="6_uqb3t"]
-[ext_resource type="Texture2D" uid="uid://tcqjc6var4ly" path="res://Assets/textures/circle32.png" id="6_yf1ru"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="7_2jidi"]
-[ext_resource type="AudioStream" uid="uid://ctmxvks3cqusq" path="res://Assets/audio/sfx/campfire.wav" id="7_mgtef"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_item.gd" id="8_vtm14"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_shape.gd" id="9_11khf"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="10_lqrpl"]
-[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="13_u6r1j"]
-[ext_resource type="PackedScene" uid="uid://qreot7sn11og" path="res://Actors/Animals/wolf.tscn" id="17_qhoo7"]
+[ext_resource type="Script" path="res://Stages/MainMenu/main_menu.gd" id="1_h6ypm"]
+[ext_resource type="Script" path="res://Game/shaking_camera.gd" id="2_sva8o"]
+[ext_resource type="PackedScene" uid="uid://dnpd03ip5jknv" path="res://Assets/meshes/water.tscn" id="3_qhbl4"]
+[ext_resource type="PackedScene" uid="uid://cljsgebwjefua" path="res://Assets/meshes/terrain.tscn" id="4_t1o47"]
+[ext_resource type="PackedScene" uid="uid://cp3qd7250fqxy" path="res://Assets/meshes/tent.tscn" id="5_m1sr6"]
+[ext_resource type="PackedScene" uid="uid://qreot7sn11og" path="res://Actors/Animals/wolf.tscn" id="6_cuucf"]
+[ext_resource type="PackedScene" uid="uid://bv1epdegkaj6v" path="res://Assets/meshes/campfire.tscn" id="7_00whp"]
+[ext_resource type="Texture2D" uid="uid://tcqjc6var4ly" path="res://Assets/textures/circle32.png" id="8_yh4xh"]
+[ext_resource type="AudioStream" uid="uid://ctmxvks3cqusq" path="res://Assets/audio/sfx/campfire.wav" id="9_6uint"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter.gd" id="10_cr5oc"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="11_coqkh"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="12_uekll"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="13_1jwfe"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="14_0cp3y"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="15_krf81"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_item.gd" id="16_1ubxv"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_shape.gd" id="17_0cxvk"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="18_f68td"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_rotation.gd" id="19_75is6"]
+[ext_resource type="Theme" uid="uid://bs0risvb7lj1c" path="res://Resources/Themes/default_ui.tres" id="20_1tclp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1hj4q"]
 sky_top_color = Color(0.054902, 0.0941176, 0.109804, 1)
@@ -35,6 +36,9 @@ sky = SubResource("Sky_huudn")
 ambient_light_color = Color(0.156863, 0.309804, 0.341176, 1)
 ambient_light_sky_contribution = 0.0
 tonemap_mode = 2
+ssr_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.156027, 0.259494, 0.290639, 1)
 fog_light_energy = 0.5
@@ -79,7 +83,7 @@ turbulence_influence_max = 0.06
 transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("6_yf1ru")
+albedo_texture = ExtResource("8_yh4xh")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -90,8 +94,8 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_oy7cc")
 size = Vector2(0.1, 0.1)
 
-[sub_resource type="Resource" id="Resource_6clkk"]
-script = ExtResource("4_c1g63")
+[sub_resource type="Resource" id="Resource_151nb"]
+script = ExtResource("12_uekll")
 amount = 200000
 enabled = true
 override_global_seed = true
@@ -99,8 +103,8 @@ custom_seed = 6
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_doxib"]
-script = ExtResource("13_u6r1j")
+[sub_resource type="Resource" id="Resource_y2rsf"]
+script = ExtResource("13_1jwfe")
 position = Vector3(0, 0, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(0.6, 0.6, 0.6)
@@ -110,8 +114,8 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_henhr"]
-script = ExtResource("7_2jidi")
+[sub_resource type="Resource" id="Resource_3msgk"]
+script = ExtResource("14_0cp3y")
 iterations = 3
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
@@ -122,8 +126,8 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_1ol6y"]
-script = ExtResource("6_uqb3t")
+[sub_resource type="Resource" id="Resource_j8xoo"]
+script = ExtResource("15_krf81")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 0.5
 ray_offset = 5.0
@@ -138,16 +142,16 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_cpj6v"]
-script = ExtResource("3_rfbys")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_6clkk"), SubResource("Resource_doxib"), SubResource("Resource_henhr"), SubResource("Resource_1ol6y")])
+[sub_resource type="Resource" id="Resource_ui076"]
+script = ExtResource("11_coqkh")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_151nb"), SubResource("Resource_y2rsf"), SubResource("Resource_3msgk"), SubResource("Resource_j8xoo")])
 
 [sub_resource type="Resource" id="Resource_5wu4o"]
-script = ExtResource("10_lqrpl")
+script = ExtResource("18_f68td")
 size = Vector3(135.762, 1, 175.936)
 
-[sub_resource type="Resource" id="Resource_6o163"]
-script = ExtResource("4_c1g63")
+[sub_resource type="Resource" id="Resource_7n4ea"]
+script = ExtResource("12_uekll")
 amount = 200
 enabled = true
 override_global_seed = false
@@ -155,8 +159,8 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_npkd6"]
-script = ExtResource("5_d3fnf")
+[sub_resource type="Resource" id="Resource_bqqox"]
+script = ExtResource("19_75is6")
 rotation = Vector3(0, 360, 0)
 snap_angle = Vector3(0, 0, 0)
 enabled = true
@@ -165,8 +169,8 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_y2jyv"]
-script = ExtResource("6_uqb3t")
+[sub_resource type="Resource" id="Resource_oirur"]
+script = ExtResource("15_krf81")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 1.0
 ray_offset = 5.0
@@ -181,8 +185,8 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_otvgw"]
-script = ExtResource("7_2jidi")
+[sub_resource type="Resource" id="Resource_y2t7i"]
+script = ExtResource("14_0cp3y")
 iterations = 3
 offset_step = 0.6
 consecutive_step_multiplier = 0.5
@@ -193,37 +197,16 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_h4lcw"]
-script = ExtResource("3_rfbys")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_6o163"), SubResource("Resource_npkd6"), SubResource("Resource_y2jyv"), SubResource("Resource_otvgw")])
+[sub_resource type="Resource" id="Resource_i6m30"]
+script = ExtResource("11_coqkh")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_7n4ea"), SubResource("Resource_bqqox"), SubResource("Resource_oirur"), SubResource("Resource_y2t7i")])
 
 [sub_resource type="Resource" id="Resource_04npt"]
-script = ExtResource("10_lqrpl")
+script = ExtResource("18_f68td")
 size = Vector3(135.762, 1, 175.936)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uyupq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jlga6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dj06"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i4hoe"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mo7i6"]
-
-[sub_resource type="Theme" id="Theme_1l3fs"]
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/colors/font_hover_color = Color(0.752941, 0.752941, 0.752941, 1)
-Button/colors/font_pressed_color = Color(0.607843, 0.607843, 0.607843, 1)
-Button/font_sizes/font_size = 32
-Button/styles/disabled = SubResource("StyleBoxEmpty_uyupq")
-Button/styles/focus = SubResource("StyleBoxEmpty_jlga6")
-Button/styles/hover = SubResource("StyleBoxEmpty_0dj06")
-Button/styles/normal = SubResource("StyleBoxEmpty_i4hoe")
-Button/styles/pressed = SubResource("StyleBoxEmpty_mo7i6")
-
 [node name="MainMenu" type="Node"]
-script = ExtResource("1_ika0g")
+script = ExtResource("1_h6ypm")
 
 [node name="Island" type="Node3D" parent="."]
 
@@ -234,12 +217,12 @@ environment = SubResource("Environment_1ns6s")
 transform = Transform3D(0.612466, -0.191038, 0.767066, 2.13995e-08, 0.970359, 0.241668, -0.790497, -0.148013, 0.594312, 21.8893, 0.933946, 5.91928)
 
 [node name="Camera3D" type="Camera3D" parent="Island/CameraHolder"]
-script = ExtResource("1_ddbuj")
+script = ExtResource("2_sva8o")
 
-[node name="Water" parent="Island" instance=ExtResource("2_s6k2h")]
+[node name="Water" parent="Island" instance=ExtResource("3_qhbl4")]
 skeleton = NodePath("../..")
 
-[node name="Terrain" parent="Island" instance=ExtResource("1_w04b6")]
+[node name="Terrain" parent="Island" instance=ExtResource("4_t1o47")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Island/Terrain"]
 collision_mask = 0
@@ -247,20 +230,20 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Island/Terrain/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_oe5ir")
 
-[node name="Tent" parent="Island" instance=ExtResource("3_rfukl")]
+[node name="Tent" parent="Island" instance=ExtResource("5_m1sr6")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20.5083, 0, 1.98997)
 
-[node name="Wolf" parent="Island" instance=ExtResource("17_qhoo7")]
+[node name="Wolf" parent="Island" instance=ExtResource("6_cuucf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20524, 0, 10.4939)
 
-[node name="Wolf2" parent="Island" node_paths=PackedStringArray("animation_player") instance=ExtResource("17_qhoo7")]
+[node name="Wolf2" parent="Island" node_paths=PackedStringArray("animation_player") instance=ExtResource("6_cuucf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.53643, 0, -4.9584)
 animation_player = NodePath("../Wolf/wolf/AnimationPlayer")
 
 [node name="Campfire" type="Node3D" parent="Island"]
 transform = Transform3D(0.672083, 0, 0.740476, 0, 1, 0, -0.740476, 0, 0.672083, 19.4548, 0, 5.29394)
 
-[node name="Campfire" parent="Island/Campfire" instance=ExtResource("4_2hl24")]
+[node name="Campfire" parent="Island/Campfire" instance=ExtResource("7_00whp")]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Island/Campfire"]
 unique_name_in_owner = true
@@ -280,41 +263,41 @@ shadow_enabled = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Island/Campfire"]
 unique_name_in_owner = true
-stream = ExtResource("7_mgtef")
+stream = ExtResource("9_6uint")
 unit_size = 7.0
 autoplay = true
 bus = &"SFX"
 
 [node name="ScatterGrass" type="Node3D" parent="Island"]
-script = ExtResource("2_qrf57")
-modifier_stack = SubResource("Resource_cpj6v")
+script = ExtResource("10_cr5oc")
+modifier_stack = SubResource("Resource_ui076")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
 [node name="ScatterItem" type="Node3D" parent="Island/ScatterGrass"]
-script = ExtResource("8_vtm14")
+script = ExtResource("16_1ubxv")
 override_cast_shadow = 0
 path = "res://Assets/meshes/grass.tscn"
 
 [node name="ScatterShape" type="Node3D" parent="Island/ScatterGrass"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("9_11khf")
+script = ExtResource("17_0cxvk")
 shape = SubResource("Resource_5wu4o")
 
 [node name="ScatterTrees" type="Node3D" parent="Island"]
-script = ExtResource("2_qrf57")
+script = ExtResource("10_cr5oc")
 render_mode = 1
-modifier_stack = SubResource("Resource_h4lcw")
+modifier_stack = SubResource("Resource_i6m30")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
 [node name="ScatterItem" type="Node3D" parent="Island/ScatterTrees"]
-script = ExtResource("8_vtm14")
+script = ExtResource("16_1ubxv")
 path = "res://Objects/HittableObjects/hittable_tree.tscn"
 
 [node name="ScatterShape" type="Node3D" parent="Island/ScatterTrees"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
-script = ExtResource("9_11khf")
+script = ExtResource("17_0cxvk")
 shape = SubResource("Resource_04npt")
 
 [node name="MainMenuUI" type="Control" parent="."]
@@ -324,7 +307,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_1l3fs")
+theme = ExtResource("20_1tclp")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenuUI"]
 layout_mode = 1

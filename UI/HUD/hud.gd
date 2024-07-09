@@ -10,13 +10,10 @@ var current_cursor: CursorLibrary.CURSOR_TYPE:
 @onready var crosshair: TextureRect = %Crosshair
 
 
-func _enter_tree() -> void:
+func _ready() -> void:
 	EventSystem.pointed_at_interactable.connect(_on_pointed_at_interactable)
 	EventSystem.pointed_at_pickupable.connect(_on_pointed_at_pickupable)
 	EventSystem.stopped_pointing_at_interactable.connect(_on_stopped_pointing_at_interactable)
-
-
-func _ready() -> void:
 	current_cursor = CursorLibrary.CURSOR_TYPE.NONE
 
 

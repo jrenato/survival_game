@@ -8,6 +8,7 @@ signal game_fade_out(fade_time: float, possible_callback: Callable)
 ## Bulletins
 signal enabled_bulletin
 signal disabled_bulletin
+signal destroy_all_bulletins
 
 ## Cursors
 signal pointed_at_pickupable

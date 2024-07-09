@@ -19,8 +19,8 @@ var is_sprinting: bool = false
 
 
 func _enter_tree() -> void:
-	EventSystem.enabled_player.connect(_on_set_player_enabled.bind(true))
-	EventSystem.disabled_player.connect(_on_set_player_enabled.bind(false))
+	EventSystem.enabled_player.connect(set_player_enabled.bind(true))
+	EventSystem.disabled_player.connect(set_player_enabled.bind(false))
 
 
 func _ready() -> void:
@@ -51,7 +51,8 @@ func _input(event: InputEvent) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		EventSystem.enabled_bulletin.emit(BulletinConfig.Keys.PAUSE_MENU)
+		set_player_enabled(false)
 	elif event.is_action_pressed("open_crafting_menu"):
 		EventSystem.enabled_bulletin.emit(BulletinConfig.Keys.CRAFTING_MENU)
 	elif event.is_action_pressed("item_hotkey"):
@@ -105,7 +106,7 @@ func look_around(relative: Vector2) -> void:
 	head.rotation_degrees.x = clampf(head.rotation_degrees.x, -90, 90)
 
 
-func _on_set_player_enabled(enabled: bool) -> void:
+func set_player_enabled(enabled: bool) -> void:
 	set_process(enabled)
 	set_physics_process(enabled)
 	set_process_input(enabled)

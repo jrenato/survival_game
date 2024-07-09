@@ -5,7 +5,7 @@ extends VBoxContainer
 @onready var health_bar: TextureProgressBar = %HealthBar
 
 
-func _enter_tree() -> void:
+func _ready() -> void:
 	EventSystem.updated_energy.connect(_on_updated_energy)
 	EventSystem.updated_health.connect(_on_updated_health)
 

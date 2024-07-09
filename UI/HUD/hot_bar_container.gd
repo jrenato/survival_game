@@ -1,7 +1,7 @@
 extends HBoxContainer
 
 
-func _enter_tree() -> void:
+func _ready() -> void:
 	EventSystem.hotbar_updated.connect(_on_hotbar_updated)
 	EventSystem.updated_active_hotbar_slot.connect(_on_updated_active_hotbar_slot)
 
