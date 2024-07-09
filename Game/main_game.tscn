@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cetqfqbo47fqx"]
+[gd_scene load_steps=12 format=3 uid="uid://cetqfqbo47fqx"]
 
 [ext_resource type="Script" path="res://Game/Managers/stage_controller.gd" id="1_88a2k"]
 [ext_resource type="PackedScene" uid="uid://bllps4g7wx4gj" path="res://UI/HUD/hud.tscn" id="1_xho0w"]
@@ -7,6 +7,93 @@
 [ext_resource type="Script" path="res://Game/Managers/music_controller.gd" id="4_hvjiv"]
 [ext_resource type="Script" path="res://Game/Managers/sfx_controller.gd" id="5_67rjm"]
 [ext_resource type="Script" path="res://Game/Managers/game_fade_controller.gd" id="6_l0sg7"]
+[ext_resource type="Texture2D" uid="uid://cbcsqy1hcyknh" path="res://Assets/icons/busy_circle_fade.png" id="8_f74mr"]
+
+[sub_resource type="Animation" id="Animation_0lv82"]
+resource_name = "loading"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoadingLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.403922), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i6045"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoadingLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8kjlm"]
+_data = {
+"RESET": SubResource("Animation_i6045"),
+"loading": SubResource("Animation_0lv82")
+}
 
 [node name="MainGame" type="Node"]
 
@@ -30,12 +117,43 @@ script = ExtResource("4_hvjiv")
 [node name="SFXController" type="AudioStreamPlayer" parent="."]
 script = ExtResource("5_67rjm")
 
-[node name="GameFadeController" type="ColorRect" parent="."]
+[node name="FadingLayer" type="CanvasLayer" parent="."]
+layer = 99
+
+[node name="GameFadeController" type="ColorRect" parent="FadingLayer" node_paths=PackedStringArray("animation_player")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 6.0
+offset_right = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0)
+color = Color(0, 0, 0, 1)
 script = ExtResource("6_l0sg7")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="Sprite2D" type="Sprite2D" parent="FadingLayer/GameFadeController"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(981, 501)
+texture = ExtResource("8_f74mr")
+
+[node name="LoadingLabel" type="Label" parent="FadingLayer/GameFadeController"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_left = 932.0
+offset_top = 523.0
+offset_right = 1024.0
+offset_bottom = 557.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Loading"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadingLayer/GameFadeController"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_8kjlm")
+}

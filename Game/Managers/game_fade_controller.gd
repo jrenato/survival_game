@@ -1,11 +1,14 @@
 class_name GameFadeController extends ColorRect
 
+@export var animation_player: AnimationPlayer
+
+
 func _enter_tree() -> void:
 	EventSystem.game_fade_in.connect(_on_game_fade_in)
 	EventSystem.game_fade_out.connect(_on_game_fade_out)
 
 
-func _on_game_fade_in(fade_time: float, possible_callback: Variant) -> void:
+func _on_game_fade_in(fade_time: float, possible_callback: Variant, show_loading: bool = false) -> void:
 	var tween: Tween = create_tween()
 
 	tween.tween_property(self, "color", Color.BLACK, fade_time)
@@ -14,6 +17,9 @@ func _on_game_fade_in(fade_time: float, possible_callback: Variant) -> void:
 
 	if possible_callback is Callable:
 		tween.tween_callback(possible_callback)
+
+	if show_loading:
+		tween.tween_callback(animation_player.play.bind("loading"))
 
 
 func _on_game_fade_out(fade_time: float, possible_callback: Variant) -> void:
@@ -25,6 +31,8 @@ func _on_game_fade_out(fade_time: float, possible_callback: Variant) -> void:
 
 	if possible_callback is Callable:
 		tween.tween_callback(possible_callback)
+
+	animation_player.play("RESET")
 
 
 func set_master_volume(volume_linear: float) -> void:

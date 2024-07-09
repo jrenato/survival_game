@@ -13,5 +13,5 @@ const STAGE_PATHS: Dictionary = {
 }
 
 
-static func get_stage(key: Keys) -> Node:
+static func get_stage(key: Keys) -> Stage:
 	return STAGE_PATHS.get(key).instantiate()
