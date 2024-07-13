@@ -5,6 +5,7 @@ enum Keys {
 	CRAFTING_MENU,
 	COOKING_MENU,
 	PAUSE_MENU,
+	SETTINGS_MENU,
 }
 
 const BULLETIN_PATHS: Dictionary = {
@@ -12,6 +13,7 @@ const BULLETIN_PATHS: Dictionary = {
 	Keys.CRAFTING_MENU: "res://UI/Bulletins/PlayerMenus/crafting_menu.tscn",
 	Keys.COOKING_MENU: "res://UI/Bulletins/PlayerMenus/cooking_menu.tscn",
 	Keys.PAUSE_MENU: "res://UI/Bulletins/PauseMenu/pause_menu.tscn",
+	Keys.SETTINGS_MENU: "res://UI/Bulletins/SettingsMenu/settings_menu.tscn",
 }
 
 

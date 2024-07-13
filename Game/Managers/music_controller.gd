@@ -1,9 +1,12 @@
 class_name MusicController extends AudioStreamPlayer
 
 
+func _enter_tree() -> void:
+	EventSystem.play_music.connect(play_music)
+
+
 func _ready() -> void:
 	bus = "Music"
-	EventSystem.play_music.connect(play_music)
 
 
 func play_music(key: MusicConfig.Keys) -> void:

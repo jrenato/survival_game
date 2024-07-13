@@ -58,3 +58,10 @@ signal object_spawned(object_scene: PackedScene, transform: Transform3D)
 signal play_music(key: MusicConfig.Keys)
 signal play_sound(key: SFXConfig.Keys)
 signal play_dynamic_sound(key: SFXConfig.Keys, position: Vector3)
+
+## Settings
+signal music_volume_changed(value: float)
+signal sfx_volume_changed(value: float)
+signal resolution_scale_changed(value: float)
+signal ssaa_changed(value: bool)
+signal fullscreen_changed(value: bool)

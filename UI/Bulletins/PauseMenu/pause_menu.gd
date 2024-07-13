@@ -29,19 +29,16 @@ func fade_in() -> void:
 	tween.tween_property(exit_button, "modulate", Color.WHITE, BUTTON_FADE_TIME)
 
 
-func destroy_self() -> void:
-	EventSystem.disabled_bulletin.emit(BulletinConfig.Keys.PAUSE_MENU)
+func _on_resume_button_pressed() -> void:
 	EventSystem.hud_show.emit()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-
-func _on_resume_button_pressed() -> void:
 	get_tree().paused = false
 	fade_out()
 
 
 func _on_settings_button_pressed() -> void:
-	pass # Replace with function body.
+	EventSystem.enabled_bulletin.emit(BulletinConfig.Keys.SETTINGS_MENU, true)
+	fade_out()
 
 
 func _on_exit_button_pressed() -> void:
