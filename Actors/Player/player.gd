@@ -107,6 +107,10 @@ func look_around(relative: Vector2) -> void:
 
 
 func set_player_enabled(enabled: bool) -> void:
+	if enabled:
+		print("Enabling player")
+	else:
+		print("Disabling player")
 	set_process(enabled)
 	set_physics_process(enabled)
 	set_process_input(enabled)

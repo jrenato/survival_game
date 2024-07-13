@@ -1,36 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6y8eifrlravt"]
+[gd_scene load_steps=6 format=3 uid="uid://bael6k0wuh1n2"]
 
-[ext_resource type="Theme" uid="uid://bs0risvb7lj1c" path="res://Resources/Themes/default_ui.tres" id="1_cvr7c"]
-[ext_resource type="Script" path="res://UI/Bulletins/PauseMenu/pause_menu.gd" id="2_es17n"]
+[ext_resource type="PackedScene" uid="uid://ma75gmv8ue8n" path="res://UI/Bulletins/FadingBulletin/fading_bulletin_template.tscn" id="1_aer0l"]
+[ext_resource type="Script" path="res://UI/Bulletins/PauseMenu/pause_menu.gd" id="2_8wbwu"]
+[ext_resource type="Theme" uid="uid://bs0risvb7lj1c" path="res://Resources/Themes/default_ui.tres" id="2_pvxed"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_pblko"]
 device = -1
 keycode = 4194305
 
-[sub_resource type="Shortcut" id="Shortcut_ssgjv"]
+[sub_resource type="Shortcut" id="Shortcut_pdajh"]
 events = [SubResource("InputEventKey_pblko")]
 
-[node name="PauseMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_cvr7c")
-script = ExtResource("2_es17n")
+[node name="PauseMenu" instance=ExtResource("1_aer0l")]
+theme = ExtResource("2_pvxed")
+script = ExtResource("2_8wbwu")
 
-[node name="BackgroundColorRect" type="ColorRect" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,23 +25,23 @@ grow_vertical = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="ResumeButton" type="Button" parent="VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="VBoxContainer" index="0"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-shortcut = SubResource("Shortcut_ssgjv")
+shortcut = SubResource("Shortcut_pdajh")
 shortcut_in_tooltip = false
 text = "Resume"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="VBoxContainer" index="1"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
 text = "Settings"
 
-[node name="ExitButton" type="Button" parent="VBoxContainer"]
+[node name="ExitButton" type="Button" parent="VBoxContainer" index="2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
