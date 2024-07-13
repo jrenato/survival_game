@@ -52,7 +52,6 @@ func _input(event: InputEvent) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		EventSystem.enabled_bulletin.emit(BulletinConfig.Keys.PAUSE_MENU)
-		set_player_enabled(false)
 	elif event.is_action_pressed("open_crafting_menu"):
 		EventSystem.enabled_bulletin.emit(BulletinConfig.Keys.CRAFTING_MENU)
 	elif event.is_action_pressed("item_hotkey"):

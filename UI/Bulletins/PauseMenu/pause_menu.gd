@@ -31,7 +31,6 @@ func fade_in() -> void:
 
 func destroy_self() -> void:
 	EventSystem.disabled_bulletin.emit(BulletinConfig.Keys.PAUSE_MENU)
-	EventSystem.enabled_player.emit()
 	EventSystem.hud_show.emit()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
