@@ -77,6 +77,7 @@ custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 
 [node name="MusicVolumeSlider" type="HSlider" parent="VBoxContainer/SettingsContainer/WidgetContainer/MusicVolumeContainer" index="0"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(256, 24)
 layout_mode = 2
 size_flags_vertical = 4
@@ -94,6 +95,7 @@ custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 
 [node name="SFXVolumeSlider" type="HSlider" parent="VBoxContainer/SettingsContainer/WidgetContainer/SFXVolumeContainer" index="0"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(256, 24)
 layout_mode = 2
 size_flags_vertical = 4
@@ -111,6 +113,7 @@ custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 
 [node name="ResolutionScaleSlider" type="HSlider" parent="VBoxContainer/SettingsContainer/WidgetContainer/ResolutionScaleContainer" index="0"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(256, 24)
 layout_mode = 2
 size_flags_vertical = 4
@@ -126,6 +129,7 @@ layout_mode = 2
 text = "50"
 
 [node name="SSAACheckButton" type="CheckButton" parent="VBoxContainer/SettingsContainer/WidgetContainer" index="3"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -133,6 +137,7 @@ theme_override_icons/checked = ExtResource("2_yy185")
 theme_override_icons/unchecked = ExtResource("3_mhdhe")
 
 [node name="FullscreenCheckButton" type="CheckButton" parent="VBoxContainer/SettingsContainer/WidgetContainer" index="4"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -145,9 +150,4 @@ size_flags_horizontal = 4
 theme = ExtResource("4_y2unj")
 text = "Apply and Close"
 
-[connection signal="value_changed" from="VBoxContainer/SettingsContainer/WidgetContainer/MusicVolumeContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/SettingsContainer/WidgetContainer/SFXVolumeContainer/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/SettingsContainer/WidgetContainer/ResolutionScaleContainer/ResolutionScaleSlider" to="." method="_on_resolution_scale_slider_value_changed"]
-[connection signal="toggled" from="VBoxContainer/SettingsContainer/WidgetContainer/SSAACheckButton" to="." method="_on_ssaa_check_button_toggled"]
-[connection signal="toggled" from="VBoxContainer/SettingsContainer/WidgetContainer/FullscreenCheckButton" to="." method="_on_fullscreen_check_button_toggled"]
 [connection signal="pressed" from="VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

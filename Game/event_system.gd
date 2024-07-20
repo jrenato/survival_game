@@ -65,3 +65,5 @@ signal sfx_volume_changed(value: float)
 signal resolution_scale_changed(value: float)
 signal ssaa_changed(value: bool)
 signal fullscreen_changed(value: bool)
+signal request_settings_resource(target_callable: Callable)
+signal request_save_settings
