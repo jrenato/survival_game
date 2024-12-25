@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=3 uid="uid://ckbcvhm6g4thr"]
 
 [ext_resource type="PackedScene" uid="uid://bro8eh1sqle7q" path="res://UI/Bulletins/PlayerMenus/player_menu_base.tscn" id="1_83pc8"]
-[ext_resource type="Script" path="res://UI/Bulletins/PlayerMenus/cooking_menu.gd" id="2_fdv61"]
+[ext_resource type="Script" uid="uid://bo58kuf3ea6in" path="res://UI/Bulletins/PlayerMenus/cooking_menu.gd" id="2_fdv61"]
 [ext_resource type="PackedScene" uid="uid://txw4c7b7vivl" path="res://UI/CustomNodes/inventory_slot.tscn" id="2_qo4ie"]
-[ext_resource type="Script" path="res://UI/CustomNodes/start_cooking_slot.gd" id="3_8834u"]
+[ext_resource type="Script" uid="uid://cvfvey4bg08ba" path="res://UI/CustomNodes/start_cooking_slot.gd" id="3_8834u"]
 [ext_resource type="Texture2D" uid="uid://x6qo4tct8406" path="res://Assets/textures/square32.png" id="3_u6lkr"]
-[ext_resource type="Script" path="res://UI/CustomNodes/final_cooking_slot.gd" id="5_k3l6u"]
+[ext_resource type="Script" uid="uid://cj8jibdxhq4pn" path="res://UI/CustomNodes/final_cooking_slot.gd" id="5_k3l6u"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbhuh"]
-bg_color = Color(0, 0, 0, 0.627451)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jd26"]
+bg_color = Color(0.32549, 0.32549, 0.32549, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfajf"]
 bg_color = Color(0, 0, 0, 0.235294)
@@ -16,8 +16,8 @@ bg_color = Color(0, 0, 0, 0.235294)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cucus"]
 bg_color = Color(0, 0, 0, 0.352941)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jd26"]
-bg_color = Color(0.32549, 0.32549, 0.32549, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbhuh"]
+bg_color = Color(0, 0, 0, 0.627451)
 
 [node name="CookingMenu" instance=ExtResource("1_83pc8")]
 z_index = 0
@@ -68,8 +68,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_qbhuh")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0jd26")
 theme_override_styles/hover = SubResource("StyleBoxFlat_pfajf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cucus")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_0jd26")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qbhuh")
 text = "Cook"

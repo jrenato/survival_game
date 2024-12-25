@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://byr4cmpswpi74"]
 
 [ext_resource type="PackedScene" uid="uid://cwxjv45mn41k1" path="res://Items/Templates/equipable_template.tscn" id="1_q10t4"]
-[ext_resource type="Script" path="res://Items/equipable_constructible.gd" id="2_mq4ui"]
+[ext_resource type="Script" uid="uid://u2oxepeiw5xk" path="res://Items/equipable_constructible.gd" id="2_mq4ui"]
 
 [node name="EquipableConstructible" instance=ExtResource("1_q10t4")]
 script = ExtResource("2_mq4ui")
