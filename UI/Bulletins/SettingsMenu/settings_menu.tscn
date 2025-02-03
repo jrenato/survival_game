@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bsmwqq1olvlbe"]
 
 [ext_resource type="PackedScene" uid="uid://ma75gmv8ue8n" path="res://UI/Bulletins/FadingBulletin/fading_bulletin_template.tscn" id="1_h38s8"]
-[ext_resource type="Script" path="res://UI/Bulletins/SettingsMenu/settings_menu.gd" id="2_gftva"]
+[ext_resource type="Script" uid="uid://bi51tm7fboii" path="res://UI/Bulletins/SettingsMenu/settings_menu.gd" id="2_gftva"]
 [ext_resource type="Texture2D" uid="uid://rt5c2t2mqbnc" path="res://Assets/textures/check_true.png" id="2_yy185"]
 [ext_resource type="Texture2D" uid="uid://dub6safpgycy3" path="res://Assets/textures/check_false.png" id="3_mhdhe"]
 [ext_resource type="Theme" uid="uid://bs0risvb7lj1c" path="res://Resources/Themes/default_ui.tres" id="4_y2unj"]

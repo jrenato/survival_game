@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://cetqfqbo47fqx"]
 
-[ext_resource type="Script" path="res://Game/Managers/stage_controller.gd" id="1_88a2k"]
+[ext_resource type="Script" uid="uid://bqx0deeo2kn0d" path="res://Game/Managers/stage_controller.gd" id="1_88a2k"]
 [ext_resource type="PackedScene" uid="uid://bllps4g7wx4gj" path="res://UI/HUD/hud.tscn" id="1_xho0w"]
-[ext_resource type="Script" path="res://Game/Managers/hud_controller.gd" id="2_1t756"]
-[ext_resource type="Script" path="res://Game/Managers/bulletin_controller.gd" id="2_i4u47"]
-[ext_resource type="Script" path="res://Game/Managers/settings_controller.gd" id="2_phrje"]
-[ext_resource type="Script" path="res://Game/Managers/music_controller.gd" id="4_hvjiv"]
-[ext_resource type="Script" path="res://Game/Managers/sfx_controller.gd" id="5_67rjm"]
-[ext_resource type="Script" path="res://Game/Managers/game_fade_controller.gd" id="6_l0sg7"]
+[ext_resource type="Script" uid="uid://b26kknn760x5t" path="res://Game/Managers/hud_controller.gd" id="2_1t756"]
+[ext_resource type="Script" uid="uid://fwjgdxf8ql1v" path="res://Game/Managers/bulletin_controller.gd" id="2_i4u47"]
+[ext_resource type="Script" uid="uid://bcg2lpl6omcqn" path="res://Game/Managers/settings_controller.gd" id="2_phrje"]
+[ext_resource type="Script" uid="uid://cqvtgeeqjitu2" path="res://Game/Managers/music_controller.gd" id="4_hvjiv"]
+[ext_resource type="Script" uid="uid://c3nj7w37iyeki" path="res://Game/Managers/sfx_controller.gd" id="5_67rjm"]
+[ext_resource type="Script" uid="uid://bnamniv566gag" path="res://Game/Managers/game_fade_controller.gd" id="6_l0sg7"]
 [ext_resource type="Texture2D" uid="uid://cbcsqy1hcyknh" path="res://Assets/icons/busy_circle_fade.png" id="8_f74mr"]
 
 [sub_resource type="Animation" id="Animation_i6045"]
@@ -92,8 +92,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8kjlm"]
 _data = {
-"RESET": SubResource("Animation_i6045"),
-"loading": SubResource("Animation_0lv82")
+&"RESET": SubResource("Animation_i6045"),
+&"loading": SubResource("Animation_0lv82")
 }
 
 [node name="MainGame" type="Node"]
@@ -158,5 +158,5 @@ vertical_alignment = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FadingLayer/GameFadeController"]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_8kjlm")
+&"": SubResource("AnimationLibrary_8kjlm")
 }

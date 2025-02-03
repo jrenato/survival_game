@@ -5,4 +5,3 @@ class_name SettingsResource extends Resource
 @export var resolution_scale: float = 1.0
 @export var ssaa_enabled: bool = false
 @export var fullscreen_enabled: bool = true
-
