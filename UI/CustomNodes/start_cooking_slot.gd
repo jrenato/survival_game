@@ -1,6 +1,8 @@
 class_name StartCookingSlot extends InventorySlot
 
+@warning_ignore("unused_signal")
 signal start_ingredient_enable
+@warning_ignore("unused_signal")
 signal start_ingredient_disable
 
 
