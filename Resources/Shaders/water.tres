@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=21 format=3 uid="uid://bl3vjhjdybadc"]
+[gd_resource type="VisualShader" format=3 uid="uid://bl3vjhjdybadc"]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_n7h47"]
 input_name = "time"
@@ -18,8 +18,8 @@ fractal_type = 0
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2v8u2"]
 generate_mipmaps = false
-seamless = true
 noise = SubResource("FastNoiseLite_ixsjo")
+seamless = true
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_5uygx"]
 texture = SubResource("NoiseTexture2D_2v8u2")
@@ -69,108 +69,6 @@ input_name = "normal"
 input_name = "vertex"
 
 [resource]
-code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
-
-uniform sampler2D tex_vtx_4;
-uniform sampler2D tex_frg_2;
-uniform sampler2D tex_frg_8;
-uniform vec4 ColorParameter : source_color = vec4(0.196078, 0.509804, 0.752941, 1.000000);
-
-
-
-void vertex() {
-// Input:3
-	float n_out3p0 = TIME;
-
-
-// UVFunc:2
-	vec2 n_in2p1 = vec2(0.00300, 0.00300);
-	vec2 n_out2p0 = vec2(n_out3p0) * n_in2p1 + UV;
-
-
-// Texture2D:4
-	vec4 n_out4p0 = texture(tex_vtx_4, n_out2p0);
-
-
-// Input:6
-	vec3 n_out6p0 = NORMAL;
-
-
-// Input:7
-	vec3 n_out7p0 = VERTEX;
-
-
-// MultiplyAdd:5
-	vec4 n_out5p0 = fma(n_out4p0, vec4(n_out6p0, 0.0), vec4(n_out7p0, 0.0));
-
-
-// Output:0
-	VERTEX = vec3(n_out5p0.xyz);
-
-
-}
-
-void fragment() {
-// Input:7
-	float n_out7p0 = TIME;
-
-
-// UVFunc:6
-	vec2 n_in6p1 = vec2(0.00500, 0.00500);
-	vec2 n_out6p0 = vec2(n_out7p0) * n_in6p1 + UV;
-
-
-// Texture2D:2
-	vec4 n_out2p0 = texture(tex_frg_2, n_out6p0);
-
-
-// Input:10
-	float n_out10p0 = TIME;
-
-
-// UVFunc:9
-	vec2 n_in9p1 = vec2(-0.00500, -0.00500);
-	vec2 n_out9p0 = vec2(n_out10p0) * n_in9p1 + UV;
-
-
-// Texture2D:8
-	vec4 n_out8p0 = texture(tex_frg_8, n_out9p0);
-
-
-// VectorOp:11
-	vec3 n_out11p0 = vec3(n_out2p0.xyz) * vec3(n_out8p0.xyz);
-
-
-// VectorOp:5
-	vec3 n_in5p1 = vec3(0.30000, 0.30000, 0.30000);
-	vec3 n_out5p0 = n_out11p0 * n_in5p1;
-
-
-// ColorParameter:4
-	vec4 n_out4p0 = ColorParameter;
-
-
-// VectorOp:3
-	vec4 n_out3p0 = vec4(n_out5p0, 0.0) + n_out4p0;
-
-
-// FloatConstant:12
-	float n_out12p0 = 0.900000;
-
-
-// FloatConstant:13
-	float n_out13p0 = 0.000000;
-
-
-// Output:0
-	ALBEDO = vec3(n_out3p0.xyz);
-	ALPHA = n_out12p0;
-	ROUGHNESS = n_out13p0;
-
-
-}
-"
 nodes/vertex/2/node = SubResource("VisualShaderNodeUVFunc_pxjbj")
 nodes/vertex/2/position = Vector2(-480, 160)
 nodes/vertex/3/node = SubResource("VisualShaderNodeInput_rtbau")
